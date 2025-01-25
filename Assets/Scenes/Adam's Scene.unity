@@ -297,6 +297,7 @@ MonoBehaviour:
   speed: 5
   maxVelocity: 30
   swimSpeed: 5
+  dashMult: 2
 --- !u!1 &2098401193
 GameObject:
   m_ObjectHideFlags: 0

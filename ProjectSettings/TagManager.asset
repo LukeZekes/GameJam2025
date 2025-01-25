@@ -8,6 +8,7 @@ TagManager:
   - Fish
   - Shark
   - Eel
+  - Bubble
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Background
+  - InvisibleToRenderCam
   - 
   - 
   - 
@@ -44,6 +45,18 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2408289793
+    locked: 0
+  - name: Bubbles
+    uniqueID: 65482407
+    locked: 0
+  - name: Player
+    uniqueID: 2424859981
+    locked: 0
+  - name: Enemies
+    uniqueID: 2543287101
     locked: 0
   m_RenderingLayers:
   - Default
