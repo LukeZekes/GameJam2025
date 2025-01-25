@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class enemyAttack : MonoBehaviour
 {
-    int hp;
-    int attackPower;
+    public int hp;
+    public int attackPower;
+    bool alive = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,20 +17,23 @@ public class enemyAttack : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("TakeDamage", attackPower);
+            if (alive== false) 
+            {
+                collision.gameObject.SendMessage("stillAlive", false); 
+            }
         }
     }
     // when the enemy takes damage
     void Hit(int damage)
     {
-        if (damage <= 0)
+        if (hp <= 0)
         {
             Debug.Log("Dead");
+            alive = false;
             Destroy(gameObject);
-            SendMessage("stillAlive",false);
         }
         Debug.Log("Hit!");
-        hp -= damage;
-        SendMessage("stillAlive", true);
+        hp = (hp - damage);
     }
     // sees which enemy current hp and attack is
     void WhichEnemy()
@@ -49,5 +53,9 @@ public class enemyAttack : MonoBehaviour
             hp = 7;
             attackPower = 10;
         }
+    }
+    void AliveAgain(bool isAlive)
+    {
+        alive = true;
     }
 }

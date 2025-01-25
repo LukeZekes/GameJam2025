@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponCheck : MonoBehaviour
 {
-    int damage;
+    public int damage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +18,7 @@ public class WeaponCheck : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("Shark") || collision.gameObject.CompareTag("Eel"))
         {
-            gameObject.SendMessage("Hit", damage);
-            Debug.Log("Hit");
+            collision.gameObject.SendMessage("Hit", damage);
         }
     }
 

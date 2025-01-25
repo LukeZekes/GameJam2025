@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     GameObject player;
 
     //Private Variables
-    private int health = 10;
+    private int health = 25;
 
     void Start()
     { 

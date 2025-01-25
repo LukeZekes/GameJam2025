@@ -11,11 +11,6 @@ public class enemySpawn : MonoBehaviour
     public GameObject spawn;
     private int num;
     bool dead = true;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,18 +22,21 @@ public class enemySpawn : MonoBehaviour
     {
         fishPrefab.transform.position = spawn.transform.position;
         GameObject fish = Instantiate(fishPrefab) as GameObject;
+        fish.SendMessage("AliveAgain",true);
         dead = false;
     }
     private void spawnEel() 
     {
         eelPrefab.transform.position = spawn.transform.position;
         GameObject eel = Instantiate(eelPrefab) as GameObject;
+        eel.SendMessage("AliveAgain", true);
         dead = false;
     }
     private void spawnShark()
     {
         sharkPrefab.transform.position = spawn.transform.position;
         GameObject shark = Instantiate(sharkPrefab) as GameObject;
+        shark.SendMessage("AliveAgain", true);
         dead = false;
     }
     void whoToSpawn()
@@ -69,8 +67,13 @@ public class enemySpawn : MonoBehaviour
     {
         if(alive == true)
         {
+            Debug.Log("dead");
             dead = false;
         }
-        else { dead = true; }
+        else 
+        {
+            Debug.Log("alive");
+            dead = true;
+        }
     }
 }
