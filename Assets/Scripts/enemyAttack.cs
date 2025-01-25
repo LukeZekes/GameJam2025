@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class enemyAttack : MonoBehaviour
@@ -22,9 +23,12 @@ public class enemyAttack : MonoBehaviour
         if (damage <= 0)
         {
             Destroy(gameObject);
+            SendMessage("stillAlive",false);
         }
         hp -= damage;
+        SendMessage("stillAlive", true);
     }
+
     void WhichEnemy()
     {
         if (gameObject.tag == "Fish")

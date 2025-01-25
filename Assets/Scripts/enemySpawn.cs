@@ -10,6 +10,7 @@ public class enemySpawn : MonoBehaviour
     float respawntime;
     public GameObject spawn;
     private int num;
+    bool dead = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,63 +21,56 @@ public class enemySpawn : MonoBehaviour
     void Update()
     {
         num = Random.Range(0, 2);
+        whoToSpawn();
     }
     private void spawnFish()
     {
         fishPrefab.transform.position = spawn.transform.position;
         GameObject fish = Instantiate(fishPrefab) as GameObject;
+        dead = false;
     }
     private void spawnEel() 
     {
         eelPrefab.transform.position = spawn.transform.position;
         GameObject eel = Instantiate(eelPrefab) as GameObject;
+        dead = false;
     }
     private void spawnShark()
     {
         sharkPrefab.transform.position = spawn.transform.position;
         GameObject shark = Instantiate(sharkPrefab) as GameObject;
-    }
-    void WhichEnemy()
-    {
-        if (gameObject.tag == "Fish")
-        {
-            respawntime = 1.0f;
-        }
-        else if (gameObject.tag == "Shark")
-        {
-            respawntime = 1.5f;
-        }
-        else if (gameObject.tag == "Eel")
-        {
-            respawntime = 2.0f;
-        }
-    }
-    IEnumerator fishSwim()
-    {
-        while (true) 
-        {
-            yield return new WaitForSeconds(respawntime);
-            spawnFish();
-        }
-    }
-    IEnumerator eelSwim()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(respawntime);
-            spawnEel();
-        }
-    }
-    IEnumerator sharkSwim()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(respawntime);
-            spawnShark();
-        }
+        dead = false;
     }
     void whoToSpawn()
     {
-
+        switch (num)
+        {
+            case 0: 
+                if(dead == true)
+                {
+                    spawnFish();
+                }
+                break;
+            case 1:
+                if (dead == true)
+                {
+                    spawnShark();
+                }
+                break;
+            case 2:
+                if (dead == true)
+                {
+                    spawnEel();
+                }
+                break;
+        }
+    }
+    void stillAlive(bool alive)
+    {
+        if(alive == true)
+        {
+            dead = false;
+        }
+        else { dead = true; }
     }
 }
