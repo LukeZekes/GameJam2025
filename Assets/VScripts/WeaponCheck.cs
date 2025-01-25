@@ -16,14 +16,14 @@ public class WeaponCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        //if ([Enemy tags])
-        //{
+        if ((collision.tag == "Fish") || (collision.tag == "Shark") || (collision.tag == "Eel"))
+        {
             gameObject.SendMessage("Hit", damage);
-        //}
+        }
     }
 
-    public void DamageGiven(int ammount)
+    public void DamageGiven(int amount)
     {
-        damage = ammount;
+        damage = amount;
     }
 }

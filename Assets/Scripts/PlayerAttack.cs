@@ -5,6 +5,8 @@ public class PlayerAttack : MonoBehaviour
 {
     GameObject weapon;
     InputAction attack;
+    InputAction special;
+    BubbleManager bm;
 
     [SerializeField] //for peaking only
     float chainTimer;
@@ -26,10 +28,13 @@ public class PlayerAttack : MonoBehaviour
     }
     void Start()
     {
+        bm = BubbleManager.Instance;
         chainTimer = 0;
         chainCount = 0;
         attackTimer = 0;
         attack = InputSystem.actions.FindAction("Attack");
+        special = InputSystem.actions.FindAction("Special");
+        
     }
 
     // Update is called once per frame
@@ -73,6 +78,13 @@ public class PlayerAttack : MonoBehaviour
                     break;
             }
         }
+
+        if (special.WasPerformedThisFrame() && attackTimer <= 0)
+        {
+            Vector3 bubbleTarget = (Vector3.right* 2.5f) + transform.position;
+            attackTimer = 0.5f;
+            bm.DoBubbleAttack(bubbleTarget);
+        }
     }
 
     void PerformAttack(int Chain)
@@ -100,11 +112,20 @@ public class PlayerAttack : MonoBehaviour
 
     void SpawnBubbles(int count)
     {
+        Vector2 point = new Vector3(Random.Range(-1,1), Random.Range(-1,1));
         int i = 0;
-        //while (i < count)
-        //{
-            Vector3 point = new Vector3(Random.Range(-1,1), Random.Range(-1,1), 0);
-            //if (weapon.GetComponent<>)
-        //}
+        while (i < count)
+        {
+            if (weapon.GetComponent<Collider2D>().OverlapPoint(( point + (new Vector2(weapon.transform.position.x, weapon.transform.position.y)) )))
+            {
+                i++;
+                bm.SpawnBubble( point + new Vector2(weapon.transform.position.x, weapon.transform.position.y), 0.2f, 0.4f);
+                point = point + new Vector2(Random.Range(-0.5f,0.5f), Random.Range(-0.5f,0.5f));
+            }
+            else
+            {
+                point = new Vector2(Random.Range(-1,1), Random.Range(-1,1));
+            }
+        }
     }
 }
