@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttackEnemy : MonoBehaviour
 {
     Rigidbody weapon;
 
