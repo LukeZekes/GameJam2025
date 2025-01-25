@@ -304,7 +304,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -970,10 +970,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2009202828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1032,9 +1032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e00525cc9144a14090dff75bd951bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 500
   maxVelocity: 30
-  swimSpeed: 5
+  swimSpeed: 500
 --- !u!212 &2009202830
 SpriteRenderer:
   m_ObjectHideFlags: 0
