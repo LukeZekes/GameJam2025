@@ -11,11 +11,10 @@ public class enemyAttack : MonoBehaviour
         WhichEnemy();
     }
     // collison with the player and damage
-    private void OnCollision2DEnter(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit");
             collision.gameObject.SendMessage("TakeDamage", attackPower);
         }
     }
@@ -24,9 +23,11 @@ public class enemyAttack : MonoBehaviour
     {
         if (damage <= 0)
         {
+            Debug.Log("Dead");
             Destroy(gameObject);
             SendMessage("stillAlive",false);
         }
+        Debug.Log("Hit!");
         hp -= damage;
         SendMessage("stillAlive", true);
     }

@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             //Game Over
-            Debug.Log("dead");
         }
     }
 
@@ -31,10 +30,8 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             //Game Over
-            Debug.Log("dead");
         }
         
         health = (health - dmg);
-        Debug.Log("hit!");
     }
 }

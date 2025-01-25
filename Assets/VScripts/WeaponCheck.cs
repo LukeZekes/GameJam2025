@@ -14,12 +14,13 @@ public class WeaponCheck : MonoBehaviour
     void Update()
     { }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if ([Enemy tags])
-        //{
+        if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("Shark") || collision.gameObject.CompareTag("Eel"))
+        {
             gameObject.SendMessage("Hit", damage);
-        //}
+            Debug.Log("Hit");
+        }
     }
 
     public void DamageGiven(int ammount)
