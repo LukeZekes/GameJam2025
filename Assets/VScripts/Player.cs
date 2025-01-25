@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     GameObject player;
 
     //Components
-    Rigidbody2D rbPlayer;
     Collider2D weapon;
 
     //Input
@@ -30,9 +29,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         Attack = InputSystem.actions.FindAction("Attack");
-
-        rbPlayer = gameObject.GetComponent<Rigidbody2D>();
-        weapon = gameObject.GetComponentInChildren<Collider2D>();
+        GameObject temp = GameObject.Find("Weapon");
+        weapon = temp.GetComponentInChildren<Collider2D>();
     }
 
     // Update is called once per frame
