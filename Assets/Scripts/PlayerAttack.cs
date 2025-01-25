@@ -1,169 +1,110 @@
-//Vedasri Malatker
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    //Game Objects
-    GameObject player;
+    GameObject weapon;
+    InputAction attack;
 
-    //Components
-    Rigidbody2D rbPlayer;
-    Collider2D weapon;
+    [SerializeField] //for peaking only
+    float chainTimer;
+    [SerializeField] //for peaking only
+    int chainCount;
 
-    //Input
-    InputAction Attack;
+    [SerializeField]
+    float attack1Time = 0.05f, attack2Time = 0.08f, attack3Time = 0.11f;
+    float attackTimer;
 
-    //Private Variables
-    private int health = 30;
+    [SerializeField]
+    int AttDMG1 = 5, AttDMG2 = 8, AttDMG3 = 10;
 
-    //Public Variables
-    public int frame = 5;
-    public bool isHeld;
-    public float chargeTimer = 0;
-    public float chargeMax = 4;
-    public float baseTimer = 0;
-    public float baseMax = 1;
-    public int counter = 0;
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        weapon = GameObject.Find("Weapon");
+        weapon.SetActive(false);
+    }
     void Start()
     {
-        Attack = InputSystem.actions.FindAction("Attack");
-
-        rbPlayer = gameObject.GetComponent<Rigidbody2D>();
-        weapon = gameObject.GetComponentInChildren<Collider2D>();
+        chainTimer = 0;
+        chainCount = 0;
+        attackTimer = 0;
+        attack = InputSystem.actions.FindAction("Attack");
     }
 
     // Update is called once per frame
     void Update()
     {
-        baseTimer -= Time.deltaTime;
-
-        //Regular Attack
-        if (Attack.IsPressed())
+        if (chainTimer <= 0)
         {
-            if(isHeld)
-            {
-                chargeTimer += Time.deltaTime;      //Checks Held Time for Attack
-            }
+            chainCount = 0;
         }
+        else {chainTimer -= Time.deltaTime;}
 
-        //Charge Attack
-        if(Attack.WasPressedThisFrame())
+
+        if (attackTimer > 0)
         {
-            isHeld = true;      //Checks if Player is Holding Attack
-            chargeTimer = 0;        //Current Charge Time
-
-            if (counter == 0)       //Counter for Sequence Attack
-            {
-                baseTimer = baseMax;        
-                counter++;
-
-                //Animator      //First Frame of Attack
-                DamageGiven("Regular1");
-                Debug.Log("First Attack");
-            }
-
-            else if (counter == 1)
-            {       
-                
-                if (baseTimer > 0)
-                {
-                    //Animator      //Second Frame of Attack
-                    baseTimer = baseMax;
-                    counter++;
-                    Debug.Log("Second Attack");
-                }
-
-                else 
-                {
-                    //Animator      //First Frame of Attack
-
-                    baseTimer = baseMax;
-                    counter++;
-                    Debug.Log("First Attack");
-
-                }
-            }
-
-            else if (counter == 2)
-            {
-                if (baseTimer > 0)
-                {
-                    //3nd attack
-                    counter = 0;
-                    Debug.Log("Third Attack");
-                }
-
-                else
-                {
-                    //Animator      //First Frame of Attack
-
-                    baseTimer = baseMax;
-                    counter++;
-                    Debug.Log("First Attack");
-
-                }
-            }
+            attackTimer -= Time.deltaTime;
         }
+        else {weapon.SetActive(false);}
 
-        if (Attack.WasReleasedThisFrame())
+
+        if (attack.WasPerformedThisFrame() && attackTimer <= 0)
         {
-            isHeld = false;
-            
-            if (chargeTimer >= chargeMax)
+            switch (chainCount)
             {
-                //Animator      //Charge Attack
-                chargeTimer = 0;
-                DamageGiven("Charge");
-                Debug.Log("Charge Attack");
+                case 0: // first attack
+                    weapon.GetComponent<WeaponCheck>().DamageGiven(AttDMG1);
+                    PerformAttack(1);
+                    chainCount++;
+                    chainTimer = 1;
+                    break;
+                case 1:
+                    weapon.GetComponent<WeaponCheck>().DamageGiven(AttDMG2);
+                    PerformAttack(2);
+                    chainCount++;
+                    chainTimer = 1;
+                    break;
+                case 2:
+                    weapon.GetComponent<WeaponCheck>().DamageGiven(AttDMG3);
+                    chainCount = 0;
+                    chainTimer = 0;
+                    PerformAttack(3);
+                    break;
             }
-        }
-
-    }
-
-    int DamageGiven(string type)
-    {
-        int damage = 0;
-
-        switch (type)
-        {
-            case "Regular1":
-                damage = 5;
-                break;
-
-            case "Regular2":
-                damage = 7;
-                break;
-
-            case "Regular3":
-                damage = 10;
-                break;
-
-            case "Charge":
-                damage = 20;
-                break;
-        }
-
-        return damage;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(Attack.inProgress)
-        {
-            collision.gameObject.SendMessage("Hit", DamageGiven("Regular"));
         }
     }
 
-    void TakeDamage(int dmg)
+    void PerformAttack(int Chain)
     {
-        if (health == 0)
+        //TODO: add more precise function for managing the hitbox when animations are in
+        switch(Chain)
         {
-            //Game Over
+            case 1:
+                attackTimer = attack1Time;
+                weapon.SetActive(true);
+                SpawnBubbles(3);
+                break;
+            case 2:
+                attackTimer = attack2Time;
+                weapon.SetActive(true);
+                SpawnBubbles(6);
+                break;
+            case 3:
+                attackTimer = attack3Time;
+                weapon.SetActive(true);
+                SpawnBubbles(9);
+                break;
         }
-        
-        health = (health - dmg);
+    }
+
+    void SpawnBubbles(int count)
+    {
+        int i = 0;
+        //while (i < count)
+        //{
+            Vector3 point = new Vector3(Random.Range(-1,1), Random.Range(-1,1), 0);
+            //if (weapon.GetComponent<>)
+        //}
     }
 }
