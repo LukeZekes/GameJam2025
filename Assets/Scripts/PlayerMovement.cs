@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     float dashAngle;
     Transform DashBubblePoint; //USE GLOBAL POSITION
     int dashBubbles;
+    bool dashDampen;
 
     //Inputs
     InputAction moveAction;
@@ -61,10 +62,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if (dashDampen)
+            {
+                dashDampen = false;
+                rb.linearVelocity /= 2;
+            }
             float yMove = 0f;
             //Get Y Move
             if (jumpAction.IsPressed())
-            { yMove = 1; }
+                { yMove = 1; }
             //Apply Forces
             rb.AddForce(new Vector2((moveValue.x * speed), (yMove * swimSpeed)));
             //Limit force movement, y limit down is increrased for gravity.
@@ -72,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
             //If pressing down increase force of gravity
             if (moveValue.y <= -0.5f)
-            { rb.gravityScale = 6f; }
+                { rb.gravityScale = 6f; }
             else { rb.gravityScale = 1f; }
         }
         //If dash pressed, then dash
@@ -83,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
                 dashTimer+= Time.deltaTime;
             }
             else
-            { dashed = false; }
+                { dashed = false; }
         }
         else if (dashAction.IsPressed())
         {
