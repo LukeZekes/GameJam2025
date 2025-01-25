@@ -3,10 +3,8 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     private Camera _camera;
-    public float leftBoundary;
-    public float rightBoundary;
-    public float stageBottom;
-    public float stageTop;
+    private float leftBoundary;
+    private float rightBoundary;
 
     void Start()
     {
