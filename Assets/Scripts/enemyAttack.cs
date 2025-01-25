@@ -11,11 +11,11 @@ public class enemyAttack : MonoBehaviour
         WhichEnemy();
     }
     // collison with the player and damage
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollision2DEnter(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.SendMessage("TakeDamage", attackPower);
+            SendMessage("TakeDamage", attackPower);
         }
     }
     // when the enemy takes damage
