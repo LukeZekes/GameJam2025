@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 public class enemySpawn : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class enemySpawn : MonoBehaviour
     float respawntime;
     public GameObject spawn;
     private int num;
-    bool dead = true;
-
+    float timerF;
+    float timerS;
+    float timerE;
     // Update is called once per frame
     void Update()
     {
+        timerF += Time.deltaTime;
+        timerS += Time.deltaTime;
+        timerE += Time.deltaTime;
         num = Random.Range(0, 2);
         whoToSpawn();
     }
@@ -22,58 +27,42 @@ public class enemySpawn : MonoBehaviour
     {
         fishPrefab.transform.position = spawn.transform.position;
         GameObject fish = Instantiate(fishPrefab) as GameObject;
-        fish.SendMessage("AliveAgain",true);
-        dead = false;
     }
     private void spawnEel() 
     {
         eelPrefab.transform.position = spawn.transform.position;
         GameObject eel = Instantiate(eelPrefab) as GameObject;
-        eel.SendMessage("AliveAgain", true);
-        dead = false;
     }
     private void spawnShark()
     {
         sharkPrefab.transform.position = spawn.transform.position;
         GameObject shark = Instantiate(sharkPrefab) as GameObject;
-        shark.SendMessage("AliveAgain", true);
-        dead = false;
     }
     void whoToSpawn()
     {
         switch (num)
         {
-            case 0: 
-                if(dead == true)
+            case 0:
+                if(timerF >= 10)
                 {
                     spawnFish();
+                    timerF = 0;
                 }
                 break;
             case 1:
-                if (dead == true)
+                if (timerS >= 13)
                 {
                     spawnShark();
+                    timerS = 0;
                 }
                 break;
             case 2:
-                if (dead == true)
+                if (timerE >= 15)
                 {
                     spawnEel();
+                    timerE = 0;
                 }
                 break;
-        }
-    }
-    void stillAlive(bool alive)
-    {
-        if(alive == true)
-        {
-            Debug.Log("dead");
-            dead = false;
-        }
-        else 
-        {
-            Debug.Log("alive");
-            dead = true;
         }
     }
 }

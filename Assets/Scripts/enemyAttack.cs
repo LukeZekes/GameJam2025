@@ -17,10 +17,6 @@ public class enemyAttack : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("TakeDamage", attackPower);
-            if (alive== false) 
-            {
-                collision.gameObject.SendMessage("stillAlive", false); 
-            }
         }
     }
     // when the enemy takes damage
@@ -30,6 +26,7 @@ public class enemyAttack : MonoBehaviour
         {
             Debug.Log("Dead");
             alive = false;
+            gameObject.SendMessage("stillAlive", false);
             Destroy(gameObject);
         }
         Debug.Log("Hit!");
