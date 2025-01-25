@@ -9,7 +9,6 @@ public class enemySwim : MonoBehaviour
     private float speed;
     private Vector3 position;
     private bool facing;
-    public List<GameObject> walls;
     //on Start
     private void Start()
     {
@@ -24,7 +23,7 @@ public class enemySwim : MonoBehaviour
     {
         
     }
-
+    // when collieds with wall
     private void OnTriggerEnter2D(Collider2D collied)
     {
         if (collied.gameObject.CompareTag("Walls"))
@@ -36,5 +35,25 @@ public class enemySwim : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2 (X * speed, rb.linearVelocity.y);
+    }
+    private void LateUpdate()
+    {
+       
+    }
+    void whichWay()
+    {
+        if(X > 0)
+        {
+            facing = true;
+        }
+        else if(X < 0)
+        {
+            facing= false;
+        }
+        if((facing && position.x < 0)||(!facing && position.x > 0))
+        {
+            position.x  *= -1;
+        }
+        transform.position = position;
     }
 }
