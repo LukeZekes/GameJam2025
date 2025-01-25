@@ -31,7 +31,7 @@ public class PlayerCamera : MonoBehaviour
 
         // Apply to camera
         stageCaptureCamera.rect = new Rect(0, 0, 1, 1);
-        stageCaptureCamera.orthographicSize = stageBounds.extents.y;
+        stageCaptureCamera.orthographicSize = stageBounds.size.y;
 
         Debug.Log(stageBounds.size);
     }
