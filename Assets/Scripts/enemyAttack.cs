@@ -15,7 +15,8 @@ public class enemyAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SendMessage("TakeDamage", attackPower);
+            Debug.Log("Hit");
+            collision.gameObject.SendMessage("TakeDamage", attackPower);
         }
     }
     // when the enemy takes damage
@@ -36,19 +37,16 @@ public class enemyAttack : MonoBehaviour
         {
             hp = 5;
             attackPower = 3;
-            Debug.Log("Fish");
         }
         else if (gameObject.tag == "Shark")
         {
             hp = 10;
             attackPower = 5;
-            Debug.Log("Shark");
         }
         else if(gameObject.tag == "Eel")
         {
             hp = 7;
             attackPower = 10;
-            Debug.Log("Eel");
         }
     }
 }
