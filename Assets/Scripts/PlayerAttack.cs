@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
     //Game Objects
     GameObject player;
