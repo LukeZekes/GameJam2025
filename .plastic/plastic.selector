@@ -1,4 +1,0 @@
-repository "GameJam2025 2025-01-24_19-42-34/GameJam2025@2473929606796@cloud"
-  path "/"
-    br "/main"
-    co "/main"
