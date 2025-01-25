@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeartUI : MonoBehaviour
 {
     public List<GameObject> Hearts;
-
+    public static int hp = 25;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +16,10 @@ public class HeartUI : MonoBehaviour
     void Update()
     {
         
+    }
+    public static void GetHP(int current)
+    {
+        hp = current;
     }
 
 }
