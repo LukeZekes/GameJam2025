@@ -96,12 +96,13 @@ public class PlayerMovement : MonoBehaviour
             rb.linearDamping = 0;
 
             //TODO: Add invuln state in dash
+            //TODO: spawn big bubble on opocite side from direction player is dashing
         }
     }
 
     void DashMove()
     {
-        if (dashTimer < 0.2f)
+        if (dashTimer < 0.1f)
         {
             //FUCK U UNITY TRIG FUNCTIONS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
             rb.linearVelocity = new Vector2((dashDistance * Mathf.Cos(Mathf.Deg2Rad * dashAngle)),(dashDistance * Mathf.Sin(Mathf.Deg2Rad * dashAngle))) * dashMult;
@@ -112,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
             //The pain is over now
             dashing = false;
             rb.linearDamping = 3;
-            rb.linearVelocity = Vector2.zero;
+            //rb.linearVelocity = Vector2.zero;
 
             //TODO: Reenable the ability to die, not because the dashing code is painful but because the player needs to be able to be hurt now
         }
