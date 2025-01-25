@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 dashTarget;
     float dashDistance;
     float dashAngle;
+    Transform DashBubblePoint; //USE GLOBAL POSITION
+    int dashBubbles;
 
     //Inputs
     InputAction moveAction;
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Components
     Rigidbody2D rb;
-
+    BubbleManager bm;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
 
         //Get Components
         rb = gameObject.GetComponent<Rigidbody2D>();
+        GameObject temp = GameObject.Find("BubbleManager");
+        bm = temp.GetComponent<BubbleManager>();
+        temp = GameObject.Find("DashBubblePoint");
+        DashBubblePoint = temp.transform;
     }
 
     // Update is called once per frame
@@ -85,15 +91,13 @@ public class PlayerMovement : MonoBehaviour
             //Also this gets the trig values for calulating components of velocity
             //Then it sets values for dashing and removes the resistance for dashing
             dashTarget = new Vector2(moveValue.x*(speed*1.5f), moveValue.y*(speed*1.5f));
-            Debug.Log(dashTarget);
             dashDistance = Vector2.Distance(Vector2.zero, dashTarget);
-            Debug.Log(dashDistance);
             dashAngle = Vector2.SignedAngle(Vector2.right, dashTarget);
-            Debug.Log(dashAngle);
             dashing = true;
             dashed = true;
             dashTimer = 0f;
             rb.linearDamping = 0;
+            dashBubbles = 10;
 
             //TODO: Add invuln state in dash
             //TODO: spawn big bubble on opocite side from direction player is dashing
@@ -106,15 +110,26 @@ public class PlayerMovement : MonoBehaviour
         {
             //FUCK U UNITY TRIG FUNCTIONS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
             rb.linearVelocity = new Vector2((dashDistance * Mathf.Cos(Mathf.Deg2Rad * dashAngle)),(dashDistance * Mathf.Sin(Mathf.Deg2Rad * dashAngle))) * dashMult;
-            Debug.Log(rb.linearVelocity);
+            if (dashBubbles > 0)
+            {
+                bm.SpawnBubble((DashBubblePoint.position + new Vector3 ( Random.Range(-0.5f, 0.5f),Random.Range(-0.5f, 0.5f), 0 )), 0.6f, 0.7f);
+                dashBubbles--;
+            }
         }
         else
         {
             //The pain is over now
             dashing = false;
             rb.linearDamping = 3;
+            //If any bubbles not made. spawn them
+            if (dashBubbles > 0)
+            {
+                for (int i = 0; i < dashBubbles; i++)
+                {
+                    bm.SpawnBubble((DashBubblePoint.position + new Vector3 ( Random.Range(-0.5f, 0.5f),Random.Range(-0.5f, 0.5f), 0 )), 0.6f, 0.7f);
+                }
+            }
             //rb.linearVelocity = Vector2.zero;
-
             //TODO: Reenable the ability to die, not because the dashing code is painful but because the player needs to be able to be hurt now
         }
     }

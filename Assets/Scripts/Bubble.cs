@@ -16,6 +16,10 @@ public class Bubble : MonoBehaviour
         this.speed = speed;
         this.transform.localScale *= size;
         distanceTraveled = 0;
+        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+        rb.gravityScale = -1 * Random.Range(0.1f, 0.2f);
+        float time = 3f + (3f*size);
+        Destroy(gameObject, time);
     }
 
     public void StartAttack(Vector3 target)
@@ -44,5 +48,12 @@ public class Bubble : MonoBehaviour
     {
         // Put some effects or sounds or something here
         Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        GameObject temp = GameObject.Find("BubbleManager");
+        BubbleManager bm = temp.GetComponent<BubbleManager>();
+        bm.CleanList(this.GetComponent<Bubble>());
     }
 }
