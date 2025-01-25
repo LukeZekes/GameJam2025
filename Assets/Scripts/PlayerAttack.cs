@@ -5,6 +5,7 @@ public class PlayerAttack : MonoBehaviour
 {
     GameObject weapon;
     InputAction attack;
+    InputAction special;
     BubbleManager bm;
 
     [SerializeField] //for peaking only
@@ -32,6 +33,8 @@ public class PlayerAttack : MonoBehaviour
         chainCount = 0;
         attackTimer = 0;
         attack = InputSystem.actions.FindAction("Attack");
+        special = InputSystem.actions.FindAction("Special");
+        
     }
 
     // Update is called once per frame
@@ -74,6 +77,13 @@ public class PlayerAttack : MonoBehaviour
                     PerformAttack(3);
                     break;
             }
+        }
+
+        if (special.WasPerformedThisFrame() && attackTimer <= 0)
+        {
+            Vector3 bubbleTarget = (Vector3.right* 2.5f) + transform.position;
+            attackTimer = 0.5f;
+            bm.DoBubbleAttack(bubbleTarget);
         }
     }
 
