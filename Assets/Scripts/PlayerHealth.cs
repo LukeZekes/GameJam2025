@@ -11,11 +11,6 @@ public class PlayerHealth : MonoBehaviour
     //Private Variables
     private int health = 25;
 
-    void Start()
-    { 
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
