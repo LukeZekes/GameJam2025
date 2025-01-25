@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 2304085960692280004}
   - component: {fileID: 3669920457347681604}
   - component: {fileID: 7999014645818553182}
-  - component: {fileID: 6227769444428600116}
+  - component: {fileID: 8654635587362839436}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -172,7 +172,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.63
---- !u!114 &6227769444428600116
+--- !u!114 &8654635587362839436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5828853661782720926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5302126157c90954fb4378e729c8f548, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f2fcd3c44028749a96aa5e32df4804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5954155623869890562
@@ -197,7 +197,8 @@ GameObject:
   - component: {fileID: 1539162823390750009}
   - component: {fileID: 4027559355774139635}
   - component: {fileID: 6646260607135022300}
-  - component: {fileID: 5021963628051827336}
+  - component: {fileID: 4780889309292031037}
+  - component: {fileID: 3258794807010718952}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -368,7 +369,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5021963628051827336
+--- !u!114 &4780889309292031037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -377,7 +378,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5954155623869890562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80123cca47fd1a249af581a3691083ab, type: 3}
+  m_Script: {fileID: 11500000, guid: b3a7fd61c783cee439a298415da4763d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3258794807010718952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954155623869890562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ae8997023985c4b9f6bfc4ee9d84a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chainTimer: 0
@@ -385,6 +398,9 @@ MonoBehaviour:
   attack1Time: 0.05
   attack2Time: 0.08
   attack3Time: 0.11
+  AttDMG1: 5
+  AttDMG2: 8
+  AttDMG3: 10
 --- !u!1 &7776971046625220543
 GameObject:
   m_ObjectHideFlags: 0
