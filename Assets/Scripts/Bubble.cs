@@ -26,7 +26,7 @@ public class Bubble : MonoBehaviour
     {
         this.target = target; // Multiply by 500 to make the bubbe travel far along that direction
         isMoving = true;
-        targetDirection = (target - transform.position).normalized;
+        targetDirection = target;
     }
 
     void Update()
@@ -35,12 +35,22 @@ public class Bubble : MonoBehaviour
         {
             float moveStep = speed * Time.deltaTime;
             Debug.Log("asA");
-            transform.Translate(targetDirection * moveStep);
+            transform.position = Vector3.MoveTowards(transform.position, targetDirection, moveStep);
             distanceTraveled += moveStep;
             if (distanceTraveled >= maxTravelDistance)
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (isMoving)
+        {
+            //if enemy
+            //gameObject.SendMessage("Hit", 3);
+            //then destroy
         }
     }
 
@@ -57,3 +67,4 @@ public class Bubble : MonoBehaviour
         bm.CleanList(this.GetComponent<Bubble>());
     }
 }
+ 
