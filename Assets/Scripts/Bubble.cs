@@ -18,7 +18,7 @@ public class Bubble : MonoBehaviour
         distanceTraveled = 0;
         Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
         rb.gravityScale = -1 * Random.Range(0.1f, 0.2f);
-        float time = 3f + (3f*size);
+        float time = 3f + (3f*size) + Random.Range(-0.1f, 0.1f);
         Destroy(gameObject, time);
     }
 

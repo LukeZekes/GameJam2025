@@ -6,7 +6,7 @@ public class BubbleManager : MonoBehaviour
     [SerializeField]
     private GameObject bubblePrefab;
     [SerializeField]
-    private int maxBubbleCount = 10;
+    private int maxBubbleCount = 100;
     [SerializeField]
     private List<Bubble> bubbles = new List<Bubble>();
 
@@ -58,7 +58,8 @@ public class BubbleManager : MonoBehaviour
 
     public void DoBubbleAttack(Vector3 target) {
         foreach (Bubble bubble in bubbles) {
-            bubble.StartAttack(target);
+            if (bubble != null)
+            {bubble.StartAttack(target);}
         }
     }
 

@@ -101,6 +101,11 @@ public class PlayerMovement : MonoBehaviour
 
             //TODO: Add invuln state in dash
             //TODO: spawn big bubble on opocite side from direction player is dashing
+            Vector3 backBubbleTarget = new Vector3(dashTarget.x, dashTarget.y, 0) * -1;
+            backBubbleTarget.Normalize();
+            backBubbleTarget *= 3;
+            backBubbleTarget += transform.position;
+            bm.SpawnBubble(backBubbleTarget, 2, 2);
         }
     }
 
