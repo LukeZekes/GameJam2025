@@ -8,6 +8,8 @@ public class enemySpawn : MonoBehaviour
     public GameObject sharkPrefab;
     public GameObject eelPrefab;
     float respawntime;
+    public GameObject spawn;
+    private int num;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,18 +19,21 @@ public class enemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        num = Random.Range(0, 2);
     }
     private void spawnFish()
     {
+        fishPrefab.transform.position = spawn.transform.position;
         GameObject fish = Instantiate(fishPrefab) as GameObject;
     }
     private void spawnEel() 
     {
+        eelPrefab.transform.position = spawn.transform.position;
         GameObject eel = Instantiate(eelPrefab) as GameObject;
     }
     private void spawnShark()
     {
+        sharkPrefab.transform.position = spawn.transform.position;
         GameObject shark = Instantiate(sharkPrefab) as GameObject;
     }
     void WhichEnemy()
@@ -69,5 +74,9 @@ public class enemySpawn : MonoBehaviour
             yield return new WaitForSeconds(respawntime);
             spawnShark();
         }
+    }
+    void whoToSpawn()
+    {
+
     }
 }
