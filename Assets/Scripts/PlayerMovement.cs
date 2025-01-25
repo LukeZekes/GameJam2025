@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Dash Variables
     float dashTimer = 0f;
+    [SerializeField]
     float DashCoolown = 2.2f;
     bool dashed = false;
     bool dashing = false;
