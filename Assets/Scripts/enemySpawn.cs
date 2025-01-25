@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class enemySpawn : MonoBehaviour
 {
-    public GameObject Fish;
-    public GameObject Shark;
-    public GameObject Eel;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
