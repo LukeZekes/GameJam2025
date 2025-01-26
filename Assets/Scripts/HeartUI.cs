@@ -11,20 +11,42 @@ public class HeartUI : MonoBehaviour
     void Start()
     {
         Hp = FindObjectOfType<PlayerHealth>();
-        Debug.Log(Hp.health);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateHp();
+        Debug.Log(Hp.health);
+        HeartsSeen();
     }
     void HeartsSeen()
     {
+        if (hp >= 14 && hp <= 20)
+        {
+            Hearts[0].active = false;
+        }
+        if (hp <= 15 && hp >= 11)
+        {
+            Hearts[1].active = false;
+        }
+        if (hp <= 10 && hp >= 6)
+        {
+            Hearts[2].active = false;
+        }
+        if (hp <= 5 && hp >= 1)
+        {
+            Hearts[3].active = false;
+        }
+        if(hp <= 0)
+        {
+            Hearts[4].active = false;
+        }
 
     }
     void UpdateHp()
     {
+        Hp = FindObjectOfType<PlayerHealth>();
         hp = Hp.health;
     }
 

@@ -26,7 +26,7 @@ public class enemySwim : MonoBehaviour
     // when collieds with wall
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("Shark") || collision.gameObject.CompareTag("Eel"))
         {
             X *= -1f;
         }
