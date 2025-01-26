@@ -188,3 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86dba028ebc2c1847b271683323bd978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  Audios:
+  - {fileID: 8308451269294451036, guid: a82151503dacc1844be744b922c8d6fc, type: 3}
+  - {fileID: 6425199525633107744, guid: 901376c4bcc02114697e0ef7b8e8e388, type: 3}
+  - {fileID: 1142204765047186662, guid: 04884ffbe91fae74e94e06f840988285, type: 3}

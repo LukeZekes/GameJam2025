@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,10 +7,16 @@ public class enemyAttack : MonoBehaviour
     private int hp;
     private int attackPower;
     public enemySpawn spawner;
+    public List<GameObject> Audios;
+    private int num;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         WhichEnemy();
+    }
+    private void Update()
+    {
+        num = Random.Range(0, 2);
     }
     // collison with the player and damage
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,6 +32,7 @@ public class enemyAttack : MonoBehaviour
         if (hp <= 0)
         {
             spawner.RemoveSpawn();
+            ChooseAudio();
             Destroy(gameObject);
         }
         hp = (hp - damage);
@@ -47,5 +55,39 @@ public class enemyAttack : MonoBehaviour
             hp = 7;
             attackPower = 10;
         }
+    }
+    void ChooseAudio()
+    {
+        switch (num)
+        {
+            case 0:
+                SpawnAudio1();
+                break;
+            case 1:
+                SpawnAudio2();
+                break;
+            case 2:
+                SpawnAudio3();
+                break;
+
+        }
+    }
+    public void SpawnAudio1()
+    {
+        GameObject audio1 = Instantiate(Audios[0], gameObject.transform.position, Quaternion.identity);
+        audio1.GetComponent<AudioSource>().Play();
+        Destroy(audio1, 5f);
+    }
+    public void SpawnAudio2()
+    {
+        GameObject audio2 = Instantiate(Audios[1], gameObject.transform.position, Quaternion.identity);
+        audio2.GetComponent<AudioSource>().Play();
+        Destroy(audio2, 5f);
+    }
+    public void SpawnAudio3()
+    {
+        GameObject audio3 = Instantiate(Audios[2], gameObject.transform.position, Quaternion.identity);
+        audio3.GetComponent<AudioSource>().Play();
+        Destroy(audio3, 5f);
     }
 }
