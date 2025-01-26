@@ -10,11 +10,18 @@ public class PlayerDamageUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnTxt();
+
     }
     void SpawnTxt()
     {
        GameObject Damagetxt =  Instantiate(damagePrefab, player.transform);
         Damagetxt.GetComponent<TextMeshProUGUI>().SetText(txtDisplay);
+    }
+    void Attcking(bool hit)
+    {
+        if (hit == true)
+        {
+            SpawnTxt();
+        }
     }
 }
