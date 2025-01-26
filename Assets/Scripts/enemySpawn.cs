@@ -46,6 +46,7 @@ public class enemySpawn : MonoBehaviour
         enemyAttack shark = Instantiate(sharkPrefab, transform.position, Quaternion.identity).GetComponent<enemyAttack>();
         shark.spawner = this;
     }
+    //chooses which enemy to spawn
     void whoToSpawn()
     {
         switch (num)
