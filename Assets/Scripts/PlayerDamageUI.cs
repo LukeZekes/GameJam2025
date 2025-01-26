@@ -6,7 +6,7 @@ public class PlayerDamageUI : MonoBehaviour
     public GameObject damagePrefab;
     public WeaponCheck weapon;
     public string txtDisplay;
-
+    public GameObject bubbles;
     // Update is called once per frame
 
     void SpawnTxt(int damage)
@@ -25,9 +25,23 @@ public class PlayerDamageUI : MonoBehaviour
     }
     public void Attacking(bool hit, int damage)
     {
+            if (hit == true)
+            {
+                SpawnTxt(damage);
+            }
+    }
+    public void Attacking(bool hit, int damage, Vector3 postion)
+    {
         if (hit == true)
         {
-            SpawnTxt(damage);
+            SpawnBubbleTxt(damage, postion);
         }
     }
+    void SpawnBubbleTxt(int damage, Vector3 pos)
+    {
+        GameObject Damagetxt = Instantiate(damagePrefab, pos,Quaternion.identity);
+        txtDisplay = damage.ToString();
+        Damagetxt.GetComponent<TextMeshPro>().SetText(txtDisplay);
+    }
+    
 }

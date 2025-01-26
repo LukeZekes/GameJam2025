@@ -72,6 +72,7 @@ public class Bubble : MonoBehaviour
         if (isMoving)
         {
             if (col.gameObject.tag == "Fish" || col.gameObject.tag == "Shark" || col.gameObject.tag == "Eel") {
+                FindAnyObjectByType<PlayerDamageUI>().Attacking(true, 3, transform.position);
                 col.gameObject.SendMessage("Hit", 3);
                 Pop();
             }
