@@ -17,7 +17,7 @@ public class HeartUI : MonoBehaviour
     void Update()
     {
         UpdateHp();
-        Debug.Log(Hp.health);
+        // Debug.Log(Hp.health);
         HeartsSeen();
     }
     void HeartsSeen()

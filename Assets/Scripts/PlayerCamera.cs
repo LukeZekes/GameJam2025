@@ -3,9 +3,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     private float leftBoundary, rightBoundary, leftTeleportPoint, rightTeleportPoint;
-    [SerializeField] private RenderTexture renderTexture;
     [SerializeField] private GameObject stage, leftCapturePlane, rightCapturePlane;
-    private Camera stageCaptureCamera;
     void Start()
     {
         leftBoundary = GameObject.Find("LeftBoundaryPoint").transform.position.x;
@@ -13,27 +11,23 @@ public class PlayerCamera : MonoBehaviour
         leftTeleportPoint = GameObject.Find("LeftTeleportPoint").transform.position.x;
         rightTeleportPoint = GameObject.Find("RightTeleportPoint").transform.position.x;
 
-        // Setup the stage render camera
-        stageCaptureCamera = new GameObject("StageCaptureCamera").AddComponent<Camera>();
-        stageCaptureCamera.transform.position = new Vector3(0, 0, -10);
-        stageCaptureCamera.targetTexture = renderTexture;
-        stageCaptureCamera.orthographic = true;
+        // Reuse this if we need a new camera after resizing the play area
+        // Setup the stage render camera - duplicates the background, bubbles, enemies
+        // stageCaptureCamera = new GameObject("StageCaptureCamera").AddComponent<Camera>();
+        // stageCaptureCamera.transform.position = new Vector3(0, 0, -10);
+        // stageCaptureCamera.targetTexture = stageRenderTexture;
+        // stageCaptureCamera.orthographic = true;
 
-        Bounds stageBounds = stage.GetComponent<Renderer>().bounds;
-
-        // Convert bounds corners to viewport space
-        Vector3 minViewport = Camera.main.WorldToViewportPoint(-stageBounds.size / 2);
-        Vector3 maxViewport = Camera.main.WorldToViewportPoint(stageBounds.size / 2);
-        
-        // Calculate rect values (clamped to 0-1 range)
-        float x = Mathf.Clamp01(minViewport.x);
-        float y = Mathf.Clamp01(minViewport.y);
+        // Bounds stageBounds = stage.GetComponent<Renderer>().bounds;
 
         // Apply to camera
-        stageCaptureCamera.rect = new Rect(0, 0, 1, 1);
-        stageCaptureCamera.orthographicSize = stageBounds.size.y;
+        // stageCaptureCamera.rect = new Rect(0, 0, 1, 1);
+        // stageCaptureCamera.orthographicSize = stageBounds.size.y;
 
-        Debug.Log(stageBounds.size);
+        // Setup the player camera - follows the player and captures everything except the UI
+        int resWidth = Screen.width;
+        int resHeight = Screen.height;
+
     }
 
     void Update()
