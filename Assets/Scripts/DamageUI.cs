@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class DamageUI : MonoBehaviour
 {
-    public void DestroyParent()
+    public void Destroytxt()
     {
-        GameObject parent = gameObject.transform.parent.gameObject;
-        Destroy(parent);
+        Destroy(gameObject);
     }
 }
