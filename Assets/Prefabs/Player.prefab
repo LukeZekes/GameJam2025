@@ -244,6 +244,7 @@ MonoBehaviour:
   swimSpeed: 5
   dashMult: 5
   DashCoolown: 2.2
+  dashing: 0
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -408,7 +409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5954155623869890562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfb86cd7ddbd4014fa2452c4f618fe9c, type: 3}
   m_Name: 
@@ -604,4 +605,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerM: {fileID: 0}
+  PlayerM: {fileID: 1539162823390750009}
+  PlayerA: {fileID: 3258794807010718952}
+--- !u!95 &8172964054651620018
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218583921053578382}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

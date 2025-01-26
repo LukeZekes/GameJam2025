@@ -17,7 +17,6 @@ public class HeartUI : MonoBehaviour
     void Update()
     {
         UpdateHp();
-        // Debug.Log(Hp.health);
         HeartsSeen();
     }
     void HeartsSeen()
@@ -46,7 +45,6 @@ public class HeartUI : MonoBehaviour
     }
     void UpdateHp()
     {
-        Hp = FindAnyObjectByType<PlayerHealth>();
         hp = Hp.health;
     }
 
