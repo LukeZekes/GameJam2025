@@ -16,7 +16,7 @@ public class PlayerDamageUI : MonoBehaviour
     void SpawnTxt(int damage)
     {
        GameObject Damagetxt =  Instantiate(damagePrefab, player.transform);
-        GameObject temp = GameObject.Find("Pearl Idle_0");
+        GameObject temp = GameObject.Find("PlayerSprite");
         if (temp.transform.eulerAngles.y == 180)
         {
             Damagetxt.GetComponent<TextMeshPro>().alignment = TextAlignmentOptions.Left;
