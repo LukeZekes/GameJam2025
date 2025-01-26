@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             //Game Over
-            GameManager.LoseGame();
+            GameManager.Instance.LoseGame();
         }
         
         health -= dmg;

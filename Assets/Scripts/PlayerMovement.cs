@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (transform.position.y >= endLevelHeight) {
-            GameManager.WinGame();
+            GameManager.Instance.WinGame();
         }
     }
 
