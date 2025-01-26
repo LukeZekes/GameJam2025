@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePrefab: {fileID: 4050367441250430815, guid: fe740b7a304d0c9488dd8718ab625897, type: 3}
   player: {fileID: 5954155623869890562}
+  weapon: {fileID: 0}
   txtDisplay: 5
 --- !u!1 &6269961643344980636
 GameObject:
@@ -518,7 +519,7 @@ GameObject:
   - component: {fileID: 8819418013392509918}
   - component: {fileID: 8172964054651620018}
   m_Layer: 8
-  m_Name: Pearl Idle_0
+  m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,8 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerM: {fileID: 1539162823390750009}
-  PlayerA: {fileID: 3258794807010718952}
 --- !u!95 &8172964054651620018
 Animator:
   serializedVersion: 7
