@@ -7,19 +7,13 @@ public class PlayerHealth : MonoBehaviour
 {
     //Game Objects
     GameObject player;
-
     //Private Variables
-    private int health = 30;
-
-    void Start()
-    { 
-        
-    }
+    public int health = 25;
 
     // Update is called once per frame
     void Update()
     {
-        if (health == 0)
+        if (health <= 0)
         {
             //Game Over
         }
@@ -27,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     void TakeDamage(int dmg)
     {
-        if (health == 0)
+        if (health <= 0)
         {
             //Game Over
         }

@@ -22,18 +22,18 @@ public class PlayerCamera : MonoBehaviour
         Bounds stageBounds = stage.GetComponent<Renderer>().bounds;
 
         // Convert bounds corners to viewport space
-        Vector3 minViewport = Camera.main.WorldToViewportPoint(stageBounds.min);
-        Vector3 maxViewport = Camera.main.WorldToViewportPoint(stageBounds.max);
+        Vector3 minViewport = Camera.main.WorldToViewportPoint(-stageBounds.size / 2);
+        Vector3 maxViewport = Camera.main.WorldToViewportPoint(stageBounds.size / 2);
         
         // Calculate rect values (clamped to 0-1 range)
         float x = Mathf.Clamp01(minViewport.x);
         float y = Mathf.Clamp01(minViewport.y);
-        float width = Mathf.Clamp01(maxViewport.x - minViewport.x);
-        float height = Mathf.Clamp01(maxViewport.y - minViewport.y);
 
         // Apply to camera
-        stageCaptureCamera.rect = new Rect(x, y, width, height);
-        stageCaptureCamera.orthographicSize = stageBounds.extents.y;
+        stageCaptureCamera.rect = new Rect(0, 0, 1, 1);
+        stageCaptureCamera.orthographicSize = stageBounds.size.y;
+
+        Debug.Log(stageBounds.size);
     }
 
     void Update()
