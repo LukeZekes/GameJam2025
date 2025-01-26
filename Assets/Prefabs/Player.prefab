@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3768769440476353311}
   - component: {fileID: 8460778397950289775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubbleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3669920457347681604}
   - component: {fileID: 7999014645818553182}
   - component: {fileID: 8654635587362839436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,9 @@ GameObject:
   - component: {fileID: 4780889309292031037}
   - component: {fileID: 3258794807010718952}
   - component: {fileID: 4630497718380792284}
-  m_Layer: 0
+  - component: {fileID: 3621844288803275494}
+  - component: {fileID: 8401512923301762591}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -343,7 +345,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4780889309292031037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +414,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb86cd7ddbd4014fa2452c4f618fe9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageRenderTexture: {fileID: 0}
+  stageRenderTexture: {fileID: 8400000, guid: 42d420dcb7ec2364fbf7bab13a0c321e, type: 2}
+--- !u!114 &3621844288803275494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954155623869890562}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerM: {fileID: 0}
+--- !u!114 &8401512923301762591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954155623869890562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813da7227a00123418fde965ec447f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradientTexture: {fileID: 2800000, guid: a7cba6c20b2f37041823c59b19b70d33, type: 3}
 --- !u!1 &6269961643344980636
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 890539341327532234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubbleFocus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6204557264082455814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DashBubblePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,8 +514,7 @@ GameObject:
   - component: {fileID: 5291805462394911733}
   - component: {fileID: 7965184642749300384}
   - component: {fileID: 8819418013392509918}
-  - component: {fileID: 8172964054651620018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pearl Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +583,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2004136394544249818, guid: fd1754b4cc48e9e4eb051696d99eba25, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9386792, g: 0.9868745, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -573,7 +600,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9218583921053578382}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
