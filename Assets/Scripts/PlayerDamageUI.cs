@@ -15,9 +15,9 @@ public class PlayerDamageUI : MonoBehaviour
     void SpawnTxt()
     {
        GameObject Damagetxt =  Instantiate(damagePrefab, player.transform);
-        Damagetxt.GetComponent<TextMeshProUGUI>().SetText(txtDisplay);
+        Damagetxt.GetComponent<TextMeshPro>().SetText(txtDisplay);
     }
-    void Attcking(bool hit)
+    public void Attcking(bool hit)
     {
         if (hit == true)
         {
