@@ -10,35 +10,6 @@ public class BubbleManager : MonoBehaviour
     [SerializeField]
     private List<Bubble> bubbles = new List<Bubble>();
 
-    private static BubbleManager instance;
-    public static BubbleManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindAnyObjectByType<BubbleManager>();
-                if (instance == null)
-                {
-                    GameObject go = new GameObject("BubbleManager");
-                    instance = go.AddComponent<BubbleManager>();
-                }
-            }
-            return instance;
-        }
-    }
-
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-
     //Provide size range, identical min amd max provide the value as size
     //Small = 0.5f-0.2f
     //Medium = 0.6f-0.7f

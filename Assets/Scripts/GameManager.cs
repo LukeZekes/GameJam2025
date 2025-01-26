@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameWinUI, gameLoseUI, winGamePanel, loseGamePanel;
     public bool isGameOver = false;
     private static GameManager instance;
+    float buttonHeldTimer = 0f;
+    float maxButtonHeldTime = 2f;
+    PlayerMovement player;
     public static GameManager Instance
     {
         get
@@ -45,12 +48,33 @@ public class GameManager : MonoBehaviour
         winGamePanel.SetActive(false);
         loseGamePanel.SetActive(false);
         isGameOver = false;
+        player = FindAnyObjectByType<PlayerMovement>();
+    }
+
+    void Update()
+    {
+        // if (isGameOver)
+        // {
+        //     if (Input.GetKey(KeyCode.R))
+        //     {
+        //         RestartGame();
+        //     } else if (Input.GetKey(KeyCode.Escape)) {
+        //         buttonHeldTimer += Time.deltaTime;
+        //         if (buttonHeldTimer >= maxButtonHeldTime) {
+        //             Debug.Log("Quit Game");
+        //             Application.Quit();
+        //         }
+        //     } else {
+        //         buttonHeldTimer = 0;
+        //     }
+        // }
     }
     public void WinGame()
     {
         if (!isGameOver)
         {
             Debug.Log("You win!");
+            player.FreezeManager(true);
             isGameOver = true;
             gameWinUI.SetActive(true);
             winGamePanel.SetActive(true);
@@ -62,6 +86,7 @@ public class GameManager : MonoBehaviour
         if (!isGameOver)
         {
             Debug.Log("You lose!");
+            player.FreezeManager(true);
             isGameOver = true;
             gameLoseUI.SetActive(true);
             loseGamePanel.SetActive(true);
@@ -70,6 +95,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // audioManager.StopAll();
+        // SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
     }
 }

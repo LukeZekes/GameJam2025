@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class enemySwim : MonoBehaviour

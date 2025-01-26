@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Get Components
         rb = gameObject.GetComponent<Rigidbody2D>();
-        bm = BubbleManager.Instance;
+        bm = FindFirstObjectByType<BubbleManager>();
         GameObject temp = GameObject.Find("DashBubblePoint");
         DashBubblePoint = temp.transform;
 

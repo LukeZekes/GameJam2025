@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16037738, g: 0.012674664, b: 0, a: 1}
+  m_Color: {r: 0.20754719, g: 0.015186379, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0}
+  m_Color: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -847,7 +847,7 @@ Animator:
   m_GameObject: {fileID: 1194303611588802694}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8572b430a5d282e4eaebca93a3d511a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2614393dd5ea8d541bdde184a0683118, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4153,7 +4153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 258, y: -51}
+  m_AnchoredPosition: {x: 258, y: -51.000015}
   m_SizeDelta: {x: -304, y: -171}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1033359237301688725

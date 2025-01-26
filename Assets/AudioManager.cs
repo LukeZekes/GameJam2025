@@ -40,4 +40,8 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = mainTheme;
         audioSource.Play();
     }
+    public void StopAll() {
+        audioSource.Stop();
+        voiceAudioSource.Stop();
+    }
 }

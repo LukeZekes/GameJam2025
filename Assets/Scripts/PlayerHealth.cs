@@ -1,7 +1,6 @@
 //Vedasri Malatker
 
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {

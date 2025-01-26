@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Start()
     {
-        bm = BubbleManager.Instance;
+        bm = FindFirstObjectByType<BubbleManager>();
         chainTimer = 0;
         chainCount = 0;
         attackTimer = 0;

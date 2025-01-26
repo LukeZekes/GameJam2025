@@ -14,6 +14,7 @@ public class Bubble : MonoBehaviour
     private float delay;
     private bool startDelay;
     private bool Overflow;
+    BubbleManager bm;
     // Called by BubbleManager when the bubble is spawned
     public void Setup(float speed, float size)
     {
@@ -27,6 +28,7 @@ public class Bubble : MonoBehaviour
         rb.gravityScale = -1 * Random.Range(0.1f, 0.2f);
         float time = 3f + (3f*size) + Random.Range(-0.1f, 0.1f);
         Destroy(gameObject, time);
+        bm = FindFirstObjectByType<BubbleManager>();
     }
 
     public void StartAttack(Vector3 target)
@@ -90,7 +92,7 @@ public class Bubble : MonoBehaviour
         popScript _pop = Instantiate(PopPrefab, transform.position, Quaternion.identity).GetComponent<popScript>();
         _pop.Setup(transform);
 
-        BubbleManager.Instance.CleanList(this.GetComponent<Bubble>());
+        bm.CleanList(this.GetComponent<Bubble>());
     }
 }
  
