@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 4630497718380792284}
   - component: {fileID: 3621844288803275494}
   - component: {fileID: 8401512923301762591}
+  - component: {fileID: 1017870270813310449}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5954155623869890562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfb86cd7ddbd4014fa2452c4f618fe9c, type: 3}
   m_Name: 
@@ -422,13 +423,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5954155623869890562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerM: {fileID: 0}
-  PlayerA: {fileID: 0}
+  PlayerM: {fileID: 1539162823390750009}
+  PlayerA: {fileID: 3258794807010718952}
 --- !u!114 &8401512923301762591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +443,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradientTexture: {fileID: 2800000, guid: a7cba6c20b2f37041823c59b19b70d33, type: 3}
+--- !u!114 &1017870270813310449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954155623869890562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae45025f995cd8d428f9da5985a89abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePrefab: {fileID: 4050367441250430815, guid: fe740b7a304d0c9488dd8718ab625897, type: 3}
+  player: {fileID: 5954155623869890562}
+  txtDisplay: 5
 --- !u!1 &6269961643344980636
 GameObject:
   m_ObjectHideFlags: 0

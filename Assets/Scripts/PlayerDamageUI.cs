@@ -26,7 +26,7 @@ public class PlayerDamageUI : MonoBehaviour
         }
         Damagetxt.GetComponent<TextMeshPro>().SetText(txtDisplay);
     }
-    public void Attcking(bool hit)
+    public void Attacking(bool hit)
     {
         if (hit == true)
         {
