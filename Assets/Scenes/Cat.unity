@@ -250,7 +250,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1156,6 +1156,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 172645988}
+    - target: {fileID: 1017870270813310449, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
+      propertyPath: bubbles
+      value: 
+      objectReference: {fileID: 5468281626939448599, guid: c7b8eb393767c374fa37e1efac9cc9db, type: 3}
     - target: {fileID: 3167333310450040860, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1348,7 +1352,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
