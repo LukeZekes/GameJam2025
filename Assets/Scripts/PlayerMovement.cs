@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
     float endLevelHeight;
     //Inputs
     public InputAction moveAction;
-    InputAction jumpAction;
-    InputAction dashAction;
+    public InputAction jumpAction;
+    public InputAction dashAction;
 
     //Components
     Rigidbody2D rb;

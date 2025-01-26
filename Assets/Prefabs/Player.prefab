@@ -251,6 +251,24 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 87e7d309-7473-4f2c-88cb-38709ce99d33
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  dashAction:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b8a22420-07e0-488b-9999-48152456e2dd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   Freeze: 0
 --- !u!61 &4027559355774139635
 BoxCollider2D:
@@ -350,12 +368,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ae8997023985c4b9f6bfc4ee9d84a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack:
+    m_Name: Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a351458c-7a5d-4d1f-a254-9a3a1cab66d7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  special:
+    m_Name: Special
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 65d6691e-3c49-4937-931a-38887130a328
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   chainTimer: 0
   chainCount: 0
   attack1Time: 0.05
   attack2Time: 0.08
   attack3Time: 0.11
   specialTime: 4
+  one: 0
+  two: 0
+  three: 0
+  bub: 0
   AttDMG1: 5
   AttDMG2: 8
   AttDMG3: 10
@@ -372,6 +412,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageRenderTexture: {fileID: 0}
+--- !u!114 &3621844288803275494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5954155623869890562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerM: {fileID: 0}
 --- !u!1 &6269961643344980636
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,4 +589,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1539162823390750009}
+  PlayerM: {fileID: 0}
