@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     bool dashDampen;
 
     //Inputs
-    InputAction moveAction;
+    public InputAction moveAction;
     InputAction jumpAction;
     InputAction dashAction;
 

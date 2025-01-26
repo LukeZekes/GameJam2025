@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f2fcd3c44028749a96aa5e32df4804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1 &5954155623869890562
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +297,15 @@ MonoBehaviour:
   swimSpeed: 5
   dashMult: 5
   DashCoolown: 2.2
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d460f6aa-925c-49ae-ad2f-727d6733d7b1
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   Freeze: 0
 --- !u!61 &4027559355774139635
 BoxCollider2D:
@@ -382,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a7fd61c783cee439a298415da4763d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 25
 --- !u!114 &3258794807010718952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +414,37 @@ MonoBehaviour:
   AttDMG1: 5
   AttDMG2: 8
   AttDMG3: 10
+--- !u!1 &6269961643344980636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890539341327532234}
+  m_Layer: 0
+  m_Name: BubbleFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890539341327532234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269961643344980636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.34, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5291805462394911733}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7776971046625220543
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2304085960692280004}
+  - {fileID: 890539341327532234}
   m_Father: {fileID: 3167333310450040860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7965184642749300384
@@ -535,3 +578,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1539162823390750009}

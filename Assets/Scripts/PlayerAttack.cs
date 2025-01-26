@@ -93,7 +93,8 @@ public class PlayerAttack : MonoBehaviour
 
         if (special.WasPerformedThisFrame() && attackTimer <= 0 && specialTimer <= 0)
         {
-            Vector3 bubbleTarget = (Vector3.right* 2.5f) + transform.position;
+            GameObject bubFocus = GameObject.Find("BubbleFocus");
+            Vector3 bubbleTarget = bubFocus.transform.position;
             specialTimer = specialTime;
             gameObject.GetComponent<PlayerMovement>().FreezeManager(true);
             bm.DoBubbleAttack(bubbleTarget);
