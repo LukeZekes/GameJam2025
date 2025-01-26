@@ -26,6 +26,5 @@ public class WeaponCheck : MonoBehaviour
     public void DamageGiven(int ammount)
     {
         damage = ammount;
-        Debug.Log("Damage is now" + damage);
     }
 }

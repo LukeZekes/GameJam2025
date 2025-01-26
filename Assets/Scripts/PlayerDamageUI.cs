@@ -4,21 +4,15 @@ using TMPro;
 public class PlayerDamageUI : MonoBehaviour
 {
     public GameObject damagePrefab;
-    public GameObject player;
     public WeaponCheck weapon;
     public string txtDisplay;
     public GameObject bubbles;
     // Update is called once per frame
 
-    void Update()
-    {
-
-    }
     void SpawnTxt(int damage)
     {
-       GameObject Damagetxt =  Instantiate(damagePrefab, player.transform);
-        GameObject temp = GameObject.Find("PlayerSprite");
-        if (temp.transform.eulerAngles.y == 180)
+        GameObject Damagetxt = Instantiate(damagePrefab, transform);
+        if (transform.GetChild(1).eulerAngles.y == 180)
         {
             Damagetxt.GetComponent<TextMeshPro>().alignment = TextAlignmentOptions.Left;
         }

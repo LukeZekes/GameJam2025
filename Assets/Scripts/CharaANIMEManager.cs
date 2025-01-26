@@ -56,14 +56,12 @@ public class CharaANIMEManager : MonoBehaviour
        if (PlayerM.jumpAction.IsPressed())
         {
            charaManager.SetTrigger("Jump");
-            Debug.Log("Jump Animation");
         }
 
         //Dashing Animation
        if (PlayerM.dashing)
        {
             charaManager.SetTrigger("Dash");
-            Debug.Log("Dash Animation");
        }
 
        //Attack Chain Animation

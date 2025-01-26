@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &105070344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1194303611588802694, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+  m_PrefabInstance: {fileID: 1058210086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163319586
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +510,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &858179853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7563481713263884667, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+  m_PrefabInstance: {fileID: 1058210086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &859113715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 920142008003708075, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+  m_PrefabInstance: {fileID: 1058210086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1058210086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,10 +528,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 309313962712809982, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1452629489}
     - target: {fileID: 535191421883272909, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -601,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7484149971150355377, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9186905217899913531, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
       propertyPath: Hp
       value: 
@@ -610,6 +625,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+--- !u!1 &1069912141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 297147910050138667, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+  m_PrefabInstance: {fileID: 1058210086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1086610844
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +901,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8443cc2410623418ab0546d80af5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWinUI: {fileID: 858179853}
+  gameLoseUI: {fileID: 105070344}
+  winGamePanel: {fileID: 859113715}
+  loseGamePanel: {fileID: 1069912141}
+  isGameOver: 0
 --- !u!4 &1133925910
 Transform:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     AudioManager audioManager;
+    public GameObject gameWinUI, gameLoseUI, winGamePanel, loseGamePanel;
+    public bool isGameOver = false;
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -38,18 +40,36 @@ public class GameManager : MonoBehaviour
     {
         audioManager = GetComponent<AudioManager>();
         audioManager.PlayMainTheme();
+        gameWinUI.SetActive(false);
+        gameLoseUI.SetActive(false);
+        winGamePanel.SetActive(false);
+        loseGamePanel.SetActive(false);
+        isGameOver = false;
     }
     public void WinGame()
     {
-        Debug.Log("You win!");
-        audioManager.PlayWinTheme();
+        if (!isGameOver)
+        {
+            Debug.Log("You win!");
+            isGameOver = true;
+            gameWinUI.SetActive(true);
+            winGamePanel.SetActive(true);
+            audioManager.PlayWinTheme();
+        }
     }
     public void LoseGame()
     {
-        Debug.Log("You lose!");
-        audioManager.PlayLoseTheme();
+        if (!isGameOver)
+        {
+            Debug.Log("You lose!");
+            isGameOver = true;
+            gameLoseUI.SetActive(true);
+            loseGamePanel.SetActive(true);
+            audioManager.PlayLoseTheme();
+        }
     }
-    public void RestartGame() {
+    public void RestartGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
