@@ -14,8 +14,9 @@ public class PlayerAttack : MonoBehaviour
     int chainCount;
 
     [SerializeField]
-    float attack1Time = 0.05f, attack2Time = 0.08f, attack3Time = 0.11f;
+    float attack1Time = 0.05f, attack2Time = 0.08f, attack3Time = 0.11f, specialTime = 4;
     float attackTimer;
+    float specialTimer;
 
     [SerializeField]
     int AttDMG1 = 5, AttDMG2 = 8, AttDMG3 = 10;
@@ -32,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
         chainTimer = 0;
         chainCount = 0;
         attackTimer = 0;
+        specialTimer = 0;
         attack = InputSystem.actions.FindAction("Attack");
         special = InputSystem.actions.FindAction("Special");
         
@@ -52,6 +54,16 @@ public class PlayerAttack : MonoBehaviour
             attackTimer -= Time.deltaTime;
         }
         else {weapon.SetActive(false);}
+
+        if (specialTimer > 0)
+        {
+            specialTimer -= Time.deltaTime;
+            if (specialTimer < 2)
+            {
+                gameObject.GetComponent<PlayerMovement>().FreezeManager(false);
+            }
+        }
+        else {gameObject.GetComponent<PlayerMovement>().FreezeManager(false);}
 
 
         if (attack.WasPerformedThisFrame() && attackTimer <= 0)
@@ -79,10 +91,11 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
-        if (special.WasPerformedThisFrame() && attackTimer <= 0)
+        if (special.WasPerformedThisFrame() && attackTimer <= 0 && specialTimer <= 0)
         {
             Vector3 bubbleTarget = (Vector3.right* 2.5f) + transform.position;
-            attackTimer = 0.5f;
+            specialTimer = specialTime;
+            gameObject.GetComponent<PlayerMovement>().FreezeManager(true);
             bm.DoBubbleAttack(bubbleTarget);
         }
     }
