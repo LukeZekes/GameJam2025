@@ -62,9 +62,10 @@ public class Bubble : MonoBehaviour
     {
         if (isMoving)
         {
-            //if enemy
-            //gameObject.SendMessage("Hit", 3);
-            //then destroy
+            if (col.gameObject.tag == "Fish" || col.gameObject.tag == "Shark" || col.gameObject.tag == "Eel") {
+                col.gameObject.SendMessage("Hit", 1);
+                Pop();
+            }
         }
     }
 
@@ -76,13 +77,10 @@ public class Bubble : MonoBehaviour
 
     void OnDestroy()
     {
-        GameObject temp = GameObject.Find("BubbleManager");
-        BubbleManager bm = temp.GetComponent<BubbleManager>();
-
         popScript _pop = Instantiate(PopPrefab, transform.position, Quaternion.identity).GetComponent<popScript>();
         _pop.Setup(transform);
 
-        bm.CleanList(this.GetComponent<Bubble>());
+        BubbleManager.Instance.CleanList(this.GetComponent<Bubble>());
     }
 }
  
