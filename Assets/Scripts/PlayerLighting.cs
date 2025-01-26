@@ -22,7 +22,7 @@ public class PlayerLighting : MonoBehaviour
     public Color SampleGradient(float position)
     {
         position = Mathf.Clamp01(position);
-        Debug.Log(position);
+        //Debug.Log(position);
         int pixelPosition = Mathf.RoundToInt(position * (textureSize - 1));
 
         return gradientTexture.GetPixel(0, pixelPosition);

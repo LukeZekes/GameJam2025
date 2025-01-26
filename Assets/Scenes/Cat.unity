@@ -197,10 +197,13 @@ MonoBehaviour:
   fishPrefab: {fileID: 6336809795563100404, guid: 4ea647b927146ca43854960a0a46507f, type: 3}
   sharkPrefab: {fileID: 5453071148953373959, guid: eae8471d24d3a174a83d046d8e195b3c, type: 3}
   eelPrefab: {fileID: 3709437676193577799, guid: ecf40f5bc63da7b44b120eb2473a0240, type: 3}
-  fishSpawnTime: 5
+  fishSpawnTime: 3
   sharkSpawnTime: 0
   eelSpawnTime: 0
-  maxSpawns: 1
+  fishCanSpawn: 1
+  sharkCanSpawn: 0
+  eelCanSpawn: 0
+  maxSpawns: 2
 --- !u!1 &797322837
 GameObject:
   m_ObjectHideFlags: 0
