@@ -13,19 +13,17 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
-            //Game Over
-        }
     }
 
-    void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
+        Debug.Log("hit");
         if (health <= 0)
         {
             //Game Over
+            GameManager.LoseGame();
         }
         
-        health = (health - dmg);
+        health -= dmg;
     }
 }

@@ -10,7 +10,7 @@ public class HeartUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Hp = FindObjectOfType<PlayerHealth>();
+        Hp = FindAnyObjectByType<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -23,23 +23,23 @@ public class HeartUI : MonoBehaviour
     {
         if (hp >= 14 && hp <= 20)
         {
-            Hearts[0].active = false;
+            Hearts[0].SetActive(false);
         }
         if (hp <= 15 && hp >= 11)
         {
-            Hearts[1].active = false;
+            Hearts[1].SetActive(false);
         }
         if (hp <= 10 && hp >= 6)
         {
-            Hearts[2].active = false;
+            Hearts[2].SetActive(false);
         }
         if (hp <= 5 && hp >= 1)
         {
-            Hearts[3].active = false;
+            Hearts[3].SetActive(false);
         }
         if(hp <= 0)
         {
-            Hearts[4].active = false;
+            Hearts[4].SetActive(false);
         }
 
     }

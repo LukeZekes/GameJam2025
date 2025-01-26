@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     GameObject weapon;
-    InputAction attack;
-    InputAction special;
+    public InputAction attack;
+    public InputAction special;
     BubbleManager bm;
 
     [SerializeField] //for peaking only
@@ -14,8 +14,10 @@ public class PlayerAttack : MonoBehaviour
     int chainCount;
 
     [SerializeField]
-    float attack1Time = 0.05f, attack2Time = 0.08f, attack3Time = 0.11f;
+    float attack1Time = 0.05f, attack2Time = 0.08f, attack3Time = 0.11f, specialTime = 4;
     float attackTimer;
+    float specialTimer;
+    public bool one = false, two = false, three = false, bub = false;
 
     [SerializeField]
     int AttDMG1 = 5, AttDMG2 = 8, AttDMG3 = 10;
@@ -32,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
         chainTimer = 0;
         chainCount = 0;
         attackTimer = 0;
+        specialTimer = 0;
         attack = InputSystem.actions.FindAction("Attack");
         special = InputSystem.actions.FindAction("Special");
         
@@ -53,6 +56,16 @@ public class PlayerAttack : MonoBehaviour
         }
         else {weapon.SetActive(false);}
 
+        if (specialTimer > 0)
+        {
+            specialTimer -= Time.deltaTime;
+            if (specialTimer < 2)
+            {
+                gameObject.GetComponent<PlayerMovement>().FreezeManager(false);
+            }
+        }
+        else {gameObject.GetComponent<PlayerMovement>().FreezeManager(false);}
+
 
         if (attack.WasPerformedThisFrame() && attackTimer <= 0)
         {
@@ -63,27 +76,39 @@ public class PlayerAttack : MonoBehaviour
                     PerformAttack(1);
                     chainCount++;
                     chainTimer = 1;
+
+                    one = true; //Ref for ANIME Manager
                     break;
                 case 1:
                     weapon.GetComponent<WeaponCheck>().DamageGiven(AttDMG2);
                     PerformAttack(2);
                     chainCount++;
                     chainTimer = 1;
+
+                    two = true; //Ref for ANIME Manager
+                    one = false;
                     break;
                 case 2:
                     weapon.GetComponent<WeaponCheck>().DamageGiven(AttDMG3);
                     chainCount = 0;
                     chainTimer = 0;
                     PerformAttack(3);
+
+                    three = true; //Ref for ANIME Manager
+                    two = false;
                     break;
             }
         }
 
-        if (special.WasPerformedThisFrame() && attackTimer <= 0)
+        if (special.WasPerformedThisFrame() && attackTimer <= 0 && specialTimer <= 0)
         {
-            Vector3 bubbleTarget = (Vector3.right* 2.5f) + transform.position;
-            attackTimer = 0.5f;
+            GameObject bubFocus = GameObject.Find("BubbleFocus");
+            Vector3 bubbleTarget = bubFocus.transform.position;
+            specialTimer = specialTime;
+            gameObject.GetComponent<PlayerMovement>().FreezeManager(true);
             bm.DoBubbleAttack(bubbleTarget);
+            bub = true;
+            bub = false;
         }
     }
 

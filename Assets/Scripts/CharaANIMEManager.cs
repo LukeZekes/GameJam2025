@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 public class CharaANIMEManager : MonoBehaviour
 {
     Animator charaManager;
-
-    InputAction jump;
-    InputAction move;
-    InputAction dash;
+    [SerializeField]
+    PlayerMovement PlayerM;
+    PlayerAttack PlayerA;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +17,71 @@ public class CharaANIMEManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if (PlayerAttack.)
+        //Movement Animation
+        Vector2 moveValue = PlayerM.moveAction.ReadValue<Vector2>();
+        if (moveValue.x < 0)
+        {
+            charaManager.SetBool("isMove", true);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            Debug.Log("Move Animation");
+        }
+        if (moveValue.x > 0)
+        {
+            charaManager.SetBool("isMove", true);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            Debug.Log("Move Animation");
+        }
+        else
+        {
+            charaManager.SetBool("isMove", false);
+        }
+
+       //Dashing Animation
+       if (PlayerM.dashAction.IsPressed())
+       {
+           charaManager.SetTrigger("isDash");
+           charaManager.ResetTrigger("isDash");
+
+            Debug.Log("Dash Animation");
+       }
+
+       //Jumping Animation
+       if (PlayerM.jumpAction.IsPressed())
+       {
+           charaManager.SetTrigger("isJump");
+           charaManager.ResetTrigger("isJump");
+            Debug.Log("Jump Animation");
+        }
+
+       //Attack Chain Animation
+       if (PlayerA.one)
+        {
+            charaManager.SetTrigger("Chain1");
+            charaManager.ResetTrigger("Chain1");
+            Debug.Log("Attack1 Animation");
+        }
+
+        if (PlayerA.two)
+        {
+            charaManager.SetTrigger("Chain2");
+            charaManager.ResetTrigger("Chain2");
+            Debug.Log("Attack2 Animation");
+        }
+
+        if (PlayerA.three)
+        {
+            charaManager.SetTrigger("Chain3");
+            charaManager.ResetTrigger("Chain3");
+            Debug.Log("Attack3 Animation");
+        }
+
+        //Special Animation
+        if (PlayerA.bub)
+        {
+            charaManager.SetTrigger("Special");
+            charaManager.ResetTrigger("Special");
+            Debug.Log("Special Animation");
+        }
+
     }
 }
