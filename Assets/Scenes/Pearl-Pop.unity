@@ -745,6 +745,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1194303611588802694, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2063946938698889185, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -760,6 +764,22 @@ PrefabInstance:
     - target: {fileID: 7484149971150355377, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
       propertyPath: m_Color.r
       value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577456657815241918, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577456657815241918, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.015186379
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577456657815241918, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20754719
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577456657815241918, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9186905217899913531, guid: 6bfadb0334a19b84a983a94db6af46b1, type: 3}
       propertyPath: Hp

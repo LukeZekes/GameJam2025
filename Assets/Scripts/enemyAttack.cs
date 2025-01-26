@@ -55,7 +55,7 @@ public class enemyAttack : MonoBehaviour
         if (gameObject.tag == "Fish")
         {
             hp = 5;
-            attackPower = 3;
+            attackPower = 5;
         }
         else if (gameObject.tag == "Shark")
         {
