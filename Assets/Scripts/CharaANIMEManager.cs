@@ -91,7 +91,7 @@ public class CharaANIMEManager : MonoBehaviour
         {
             charaManager.SetTrigger("Special");
             PlayerA.bub = false;
-          //  Debug.Log("Special Animation");
+            Debug.Log("Special Animation");
         }
 
     }

@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
     int chainCount;
 
     [SerializeField]
-    float attack1Time = 0.05f, attack2Time = 0.08f, attack3Time = 0.11f, specialTime = 4;
+    float attack1Time = 0.5f, attack2Time = 0.5f, attack3Time = 0.5f, specialTime = 4;
     float attackTimer;
     float specialTimer;
     public bool one = false, two = false, three = false, bub = false;
@@ -108,7 +108,6 @@ public class PlayerAttack : MonoBehaviour
             gameObject.GetComponent<PlayerMovement>().FreezeManager(true);
             bm.DoBubbleAttack(bubbleTarget);
             bub = true;
-            bub = false;
         }
     }
 
