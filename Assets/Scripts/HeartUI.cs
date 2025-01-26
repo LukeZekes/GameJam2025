@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HeartUI : MonoBehaviour
 {
+    public PlayerHealth Hp;
     public List<GameObject> Hearts;
     public static int hp = 25;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Hp = FindObjectOfType<PlayerHealth>();
+        Debug.Log(Hp.health);
     }
 
     // Update is called once per frame
@@ -17,9 +19,13 @@ public class HeartUI : MonoBehaviour
     {
         
     }
-    public static void GetHP(int current)
+    void HeartsSeen()
     {
-        hp = current;
+
+    }
+    void UpdateHp()
+    {
+        hp = Hp.health;
     }
 
 }

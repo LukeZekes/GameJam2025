@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Copy of UI_SpriteSheets_0: 8412041928590709149
+      Copy of UI_SpriteSheets_1: -2151305606578788232
+      Copy of UI_SpriteSheets_2: -7106519071316219414
+      Copy of UI_SpriteSheets_3: 3885521412278243155
+      Copy of UI_SpriteSheets_4: -4089133010357560378
+      Copy of UI_SpriteSheets_5: 4148369503352423401
+      Copy of UI_SpriteSheets_6: 8625099543015801844
+      Copy of UI_SpriteSheets_7: -1836150576151894423
+      Copy of UI_SpriteSheets_8: -8245564756703374018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
