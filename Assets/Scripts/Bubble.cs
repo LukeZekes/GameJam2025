@@ -13,9 +13,11 @@ public class Bubble : MonoBehaviour
     private float distanceTraveled;
     private float delay;
     private bool startDelay;
+    private bool Overflow;
     // Called by BubbleManager when the bubble is spawned
     public void Setup(float speed, float size)
     {
+        Overflow = false;
         startDelay = false;
         isMoving = false;
         this.speed = speed;
@@ -51,9 +53,16 @@ public class Bubble : MonoBehaviour
             float moveStep = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetDirection, moveStep);
             distanceTraveled += moveStep;
-            if ( (distanceTraveled >= maxTravelDistance) || Mathf.Abs(Vector3.Distance(transform.position, targetDirection)) < 1 )
+            if (Mathf.Abs(Vector3.Distance(transform.position, targetDirection)) < 1 && !Overflow)
             {
-                Destroy(gameObject);
+                Destroy(gameObject, 1);
+                Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+                Overflow = true;
+                Vector2 overFloat = new Vector2((transform.position.x - targetDirection.x), (transform.position.y - targetDirection.y)).normalized;
+                float mult = 1 + (1- Vector3.Distance(transform.position, targetDirection));
+                float d = Vector3.Distance(transform.position, targetDirection);
+                float a = Vector2.SignedAngle(Vector2.right, overFloat);
+                rb.AddForce(new Vector2((-d * Mathf.Cos(Mathf.Deg2Rad * a)),(-d * Mathf.Sin(Mathf.Deg2Rad * a))) * (mult+20), ForceMode2D.Impulse);
             }
         }
     }
@@ -63,7 +72,7 @@ public class Bubble : MonoBehaviour
         if (isMoving)
         {
             if (col.gameObject.tag == "Fish" || col.gameObject.tag == "Shark" || col.gameObject.tag == "Eel") {
-                col.gameObject.SendMessage("Hit", 1);
+                col.gameObject.SendMessage("Hit", 3);
                 Pop();
             }
         }
