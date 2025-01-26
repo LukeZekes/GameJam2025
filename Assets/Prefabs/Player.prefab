@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerM: {fileID: 0}
+  PlayerA: {fileID: 0}
 --- !u!114 &8401512923301762591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +515,7 @@ GameObject:
   - component: {fileID: 5291805462394911733}
   - component: {fileID: 7965184642749300384}
   - component: {fileID: 8819418013392509918}
+  - component: {fileID: 8172964054651620018}
   m_Layer: 8
   m_Name: Pearl Idle_0
   m_TagString: Untagged
@@ -617,7 +619,7 @@ Animator:
   m_GameObject: {fileID: 9218583921053578382}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8313d12e8a4c538498103227384b6bf5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
