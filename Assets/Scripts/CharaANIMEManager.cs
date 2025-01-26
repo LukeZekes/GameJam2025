@@ -6,6 +6,7 @@ public class CharaANIMEManager : MonoBehaviour
     Animator charaManager;
     [SerializeField]
     PlayerMovement PlayerM;
+    [SerializeField]
     PlayerAttack PlayerA;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
