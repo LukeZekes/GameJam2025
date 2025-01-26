@@ -21,19 +21,19 @@ public class HeartUI : MonoBehaviour
     }
     void HeartsSeen()
     {
-        if (hp >= 14 && hp <= 20)
+        if (hp >= 16 && hp <= 20)
         {
             Hearts[0].SetActive(false);
         }
-        if (hp <= 15 && hp >= 11)
+        if (hp >= 11 && hp <= 15)
         {
             Hearts[1].SetActive(false);
         }
-        if (hp <= 10 && hp >= 6)
+        if (hp >= 6 && hp <= 10)
         {
             Hearts[2].SetActive(false);
         }
-        if (hp <= 5 && hp >= 1)
+        if (hp >= 1 && hp <= 5)
         {
             Hearts[3].SetActive(false);
         }

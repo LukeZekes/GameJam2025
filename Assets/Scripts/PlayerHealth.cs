@@ -16,13 +16,13 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void TakeDamage(int dmg)
-    {
+    {        
+        health -= dmg;
+
         if (health <= 0)
         {
             //Game Over
             GameManager.Instance.LoseGame();
         }
-        
-        health -= dmg;
     }
 }
