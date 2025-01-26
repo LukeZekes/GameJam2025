@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 4780889309292031037}
   - component: {fileID: 3258794807010718952}
   - component: {fileID: 4630497718380792284}
-  - component: {fileID: 3621844288803275494}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -243,6 +242,7 @@ MonoBehaviour:
   swimSpeed: 5
   dashMult: 5
   DashCoolown: 2.2
+  dashing: 0
   moveAction:
     m_Name: Move
     m_Type: 0
@@ -413,19 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageRenderTexture: {fileID: 0}
---- !u!114 &3621844288803275494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5954155623869890562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerM: {fileID: 0}
 --- !u!1 &6269961643344980636
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,4 +577,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerM: {fileID: 0}
+  PlayerM: {fileID: 1539162823390750009}
