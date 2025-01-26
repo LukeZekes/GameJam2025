@@ -1,24 +1,25 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CharaANIMEManager : MonoBehaviour
 {
     Animator charaManager;
-    [SerializeField]
     PlayerMovement PlayerM;
-    [SerializeField]
     PlayerAttack PlayerA;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         charaManager = GetComponent<Animator>();
+        PlayerM = GetComponentInParent<PlayerMovement>();
+        PlayerA = GetComponentInParent<PlayerAttack>();
     }
 
     void FixedUpdate()
     {
-        charaManager.ResetTrigger("isDash");
-        charaManager.ResetTrigger("isJump");
+        charaManager.ResetTrigger("Dash");
+        charaManager.ResetTrigger("Jump");
         charaManager.ResetTrigger("Chain1");
         charaManager.ResetTrigger("Chain2");
         charaManager.ResetTrigger("Chain3");
@@ -30,6 +31,8 @@ public class CharaANIMEManager : MonoBehaviour
     {
         //Movement Animation
         Vector2 moveValue = PlayerM.moveAction.ReadValue<Vector2>();
+        charaManager.SetFloat("X", moveValue.x);
+        charaManager.SetFloat("Y", moveValue.y);
         if (moveValue.x < 0)
         {
             charaManager.SetBool("isMove", true);
@@ -44,20 +47,20 @@ public class CharaANIMEManager : MonoBehaviour
         }
         else
         {
-            charaManager.SetBool("isMove", false);
+            charaManager.SetBool("isMove", moveValue.y != 0);
         }
 
        //Jumping Animation
        if (PlayerM.jumpAction.IsPressed())
-       {
-           charaManager.SetTrigger("isJump");
+        {
+           charaManager.SetTrigger("Jump");
             Debug.Log("Jump Animation");
         }
 
         //Dashing Animation
        if (PlayerM.dashing)
        {
-            charaManager.SetTrigger("isDash");
+            charaManager.SetTrigger("Dash");
             Debug.Log("Dash Animation");
        }
 
