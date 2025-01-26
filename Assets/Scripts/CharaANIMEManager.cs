@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class CharaANIMEManager : MonoBehaviour
 {
     Animator charaManager;
+    [SerializeField]
+    PlayerMovement Player;
 
     InputAction jump;
     InputAction move;
@@ -13,40 +15,20 @@ public class CharaANIMEManager : MonoBehaviour
     void Start()
     {
         charaManager = GetComponent<Animator>();
-
-        jump = InputSystem.actions.FindAction("Jump");
-        move = InputSystem.actions.FindAction("Move");
-        dash = InputSystem.actions.FindAction("Sprint");
-
-        charaManager.SetBool("isMove", true);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (MOVE)
+        Vector2 moveValue = Player.moveAction.ReadValue<Vector2>();
+        if (moveValue.x < 0)
         {
-            charaManager.SetBool("isMove", true);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-
-
-
-        //if (DASH)
+        if (moveValue.x > 0)
         {
-            //charaManager.SetTrigger("isMove", true);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-
-        //if (JUMP)
-        {
-
-        }
-
-        //if (Attack)
-        {
-
-        }
-
-        //if (
+       // if (PlayerAttack.)
     }
 }

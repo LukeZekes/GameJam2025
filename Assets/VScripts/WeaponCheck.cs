@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponCheck : MonoBehaviour
 {
-    int damage;
+    public int damage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,16 +14,16 @@ public class WeaponCheck : MonoBehaviour
     void Update()
     { }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.tag == "Fish") || (collision.tag == "Shark") || (collision.tag == "Eel"))
+        if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("Shark") || collision.gameObject.CompareTag("Eel"))
         {
-            gameObject.SendMessage("Hit", damage);
+            collision.gameObject.SendMessage("Hit", damage);
         }
     }
 
-    public void DamageGiven(int amount)
+    public void DamageGiven(int ammount)
     {
-        damage = amount;
+        damage = ammount;
     }
 }

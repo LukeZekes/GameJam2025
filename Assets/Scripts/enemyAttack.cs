@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class enemyAttack : MonoBehaviour
 {
-    int hp;
-    int attackPower;
+    private int hp;
+    private int attackPower;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         WhichEnemy();
     }
     // collison with the player and damage
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("TakeDamage", attackPower);
         }
@@ -21,13 +21,11 @@ public class enemyAttack : MonoBehaviour
     // when the enemy takes damage
     void Hit(int damage)
     {
-        if (damage <= 0)
+        if (hp <= 0)
         {
             Destroy(gameObject);
-            SendMessage("stillAlive",false);
         }
-        hp -= damage;
-        SendMessage("stillAlive", true);
+        hp = (hp - damage);
     }
     // sees which enemy current hp and attack is
     void WhichEnemy()
@@ -36,19 +34,16 @@ public class enemyAttack : MonoBehaviour
         {
             hp = 5;
             attackPower = 3;
-            Debug.Log("Fish");
         }
         else if (gameObject.tag == "Shark")
         {
             hp = 10;
             attackPower = 5;
-            Debug.Log("Shark");
         }
         else if(gameObject.tag == "Eel")
         {
             hp = 7;
             attackPower = 10;
-            Debug.Log("Eel");
         }
     }
 }
