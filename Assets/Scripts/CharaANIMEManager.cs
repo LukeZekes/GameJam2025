@@ -6,6 +6,7 @@ public class CharaANIMEManager : MonoBehaviour
     Animator charaManager;
     [SerializeField]
     PlayerMovement PlayerM;
+    [SerializeField]
     PlayerAttack PlayerA;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,15 +47,6 @@ public class CharaANIMEManager : MonoBehaviour
             charaManager.SetBool("isMove", false);
         }
 
-       //Dashing Animation
-       if (PlayerM.dashing)
-       {
-           charaManager.SetTrigger("isDash");
-
-
-            Debug.Log("Dash Animation");
-       }
-
        //Jumping Animation
        if (PlayerM.jumpAction.IsPressed())
        {
@@ -62,22 +54,32 @@ public class CharaANIMEManager : MonoBehaviour
             Debug.Log("Jump Animation");
         }
 
+        //Dashing Animation
+       if (PlayerM.dashing)
+       {
+            charaManager.SetTrigger("isDash");
+            Debug.Log("Dash Animation");
+       }
+
        //Attack Chain Animation
        if (PlayerA.one)
         {
             charaManager.SetTrigger("Chain1");
+            PlayerA.one = false;
             Debug.Log("Attack1 Animation");
         }
 
         if (PlayerA.two)
         {
             charaManager.SetTrigger("Chain2");
+            PlayerA.two = false;
             Debug.Log("Attack2 Animation");
         }
 
         if (PlayerA.three)
         {
             charaManager.SetTrigger("Chain3");
+            PlayerA.three = false;
             Debug.Log("Attack3 Animation");
         }
 
@@ -85,6 +87,7 @@ public class CharaANIMEManager : MonoBehaviour
         if (PlayerA.bub)
         {
             charaManager.SetTrigger("Special");
+            PlayerA.bub = false;
             Debug.Log("Special Animation");
         }
 
