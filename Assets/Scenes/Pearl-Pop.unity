@@ -1101,21 +1101,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
---- !u!1 &1485061205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3830549323214066220, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
-  m_PrefabInstance: {fileID: 1485061204}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1485061206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 641903990374644563, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
-  m_PrefabInstance: {fileID: 1485061204}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1485061207 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1193089089782797064, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
-  m_PrefabInstance: {fileID: 1485061204}
-  m_PrefabAsset: {fileID: 0}
 --- !u!61 &1485061208 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 5744398814958036402, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
@@ -1178,22 +1163,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 342121475805382195, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
-      propertyPath: stage
-      value: 
-      objectReference: {fileID: 1485061207}
-    - target: {fileID: 342121475805382195, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
-      propertyPath: leftCapturePlane
-      value: 
-      objectReference: {fileID: 1485061206}
-    - target: {fileID: 342121475805382195, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
-      propertyPath: rightCapturePlane
-      value: 
-      objectReference: {fileID: 1485061205}
-    - target: {fileID: 342121475805382195, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
-      propertyPath: stageRenderTexture
-      value: 
-      objectReference: {fileID: 8400000, guid: 42d420dcb7ec2364fbf7bab13a0c321e, type: 2}
     - target: {fileID: 3167333310450040860, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
