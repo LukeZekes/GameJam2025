@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pearl Attack_0: -445779853177350034
+      Pearl Attack_1: -6245902931391105443
+      Pearl Attack_2: -9218213539750931741
+      Pearl Attack_3: 5890810421637839957
+      Pearl Attack_4: -8356483381931389051
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
