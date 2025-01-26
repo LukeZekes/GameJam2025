@@ -24,6 +24,14 @@ public class enemySwim : MonoBehaviour
         
     }
     // when collieds with wall
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("Shark") || collision.gameObject.CompareTag("Eel"))
+        {
+            X *= -1f;
+        }
+    }
+    /*
     private void OnTriggerEnter2D(Collider2D collied)
     {
         if (collied.gameObject.CompareTag("Walls"))
@@ -31,7 +39,7 @@ public class enemySwim : MonoBehaviour
             X *= -1f;
         }
     }
-
+    */
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2 (X * speed, rb.linearVelocity.y);

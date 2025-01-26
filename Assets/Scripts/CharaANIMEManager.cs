@@ -18,6 +18,6 @@ public class CharaANIMEManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (PlayerAttack.)
+       // if (PlayerAttack.)
     }
 }
