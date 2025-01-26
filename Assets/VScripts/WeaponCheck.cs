@@ -19,12 +19,13 @@ public class WeaponCheck : MonoBehaviour
         if (collision.gameObject.CompareTag("Fish") || collision.gameObject.CompareTag("Shark") || collision.gameObject.CompareTag("Eel"))
         {
             collision.gameObject.SendMessage("Hit", damage);
-            transform.parent.parent.GetComponent<PlayerDamageUI>().Attacking(true);
+            transform.parent.parent.GetComponent<PlayerDamageUI>().Attacking(true, damage);
         }
     }
 
     public void DamageGiven(int ammount)
     {
         damage = ammount;
+        Debug.Log("Damage is now" + damage);
     }
 }

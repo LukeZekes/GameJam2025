@@ -5,6 +5,7 @@ public class PlayerDamageUI : MonoBehaviour
 {
     public GameObject damagePrefab;
     public GameObject player;
+    public WeaponCheck weapon;
     public string txtDisplay;
 
     // Update is called once per frame
@@ -12,7 +13,7 @@ public class PlayerDamageUI : MonoBehaviour
     {
 
     }
-    void SpawnTxt()
+    void SpawnTxt(int damage)
     {
        GameObject Damagetxt =  Instantiate(damagePrefab, player.transform);
         GameObject temp = GameObject.Find("Pearl Idle_0");
@@ -24,13 +25,14 @@ public class PlayerDamageUI : MonoBehaviour
         {
             Damagetxt.GetComponent<TextMeshPro>().alignment = TextAlignmentOptions.Right;
         }
+        txtDisplay = damage.ToString();
         Damagetxt.GetComponent<TextMeshPro>().SetText(txtDisplay);
     }
-    public void Attacking(bool hit)
+    public void Attacking(bool hit, int damage)
     {
         if (hit == true)
         {
-            SpawnTxt();
+            SpawnTxt(damage);
         }
     }
 }

@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 4780889309292031037}
   - component: {fileID: 3258794807010718952}
   - component: {fileID: 4630497718380792284}
-  - component: {fileID: 3621844288803275494}
   - component: {fileID: 8401512923301762591}
   - component: {fileID: 1017870270813310449}
   m_Layer: 8
@@ -416,20 +415,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageRenderTexture: {fileID: 8400000, guid: 42d420dcb7ec2364fbf7bab13a0c321e, type: 2}
---- !u!114 &3621844288803275494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5954155623869890562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerM: {fileID: 1539162823390750009}
-  PlayerA: {fileID: 3258794807010718952}
 --- !u!114 &8401512923301762591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +603,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9218583921053578382}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 772db8536b4c0934faabbbbfd0446ef9, type: 3}
   m_Name: 

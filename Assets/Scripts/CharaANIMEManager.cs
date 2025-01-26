@@ -34,13 +34,13 @@ public class CharaANIMEManager : MonoBehaviour
         {
             charaManager.SetBool("isMove", true);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            Debug.Log("Move Animation");
+           // Debug.Log("Move Animation");
         }
         else if (moveValue.x > 0)
         {
             charaManager.SetBool("isMove", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            Debug.Log("Move Animation");
+           // Debug.Log("Move Animation");
         }
         else
         {
@@ -51,14 +51,14 @@ public class CharaANIMEManager : MonoBehaviour
        if (PlayerM.jumpAction.IsPressed())
        {
            charaManager.SetTrigger("isJump");
-            Debug.Log("Jump Animation");
+           // Debug.Log("Jump Animation");
         }
 
         //Dashing Animation
        if (PlayerM.dashing)
        {
             charaManager.SetTrigger("isDash");
-            Debug.Log("Dash Animation");
+           // Debug.Log("Dash Animation");
        }
 
        //Attack Chain Animation
@@ -66,21 +66,21 @@ public class CharaANIMEManager : MonoBehaviour
         {
             charaManager.SetTrigger("Chain1");
             PlayerA.one = false;
-            Debug.Log("Attack1 Animation");
+           // Debug.Log("Attack1 Animation");
         }
 
         if (PlayerA.two)
         {
             charaManager.SetTrigger("Chain2");
             PlayerA.two = false;
-            Debug.Log("Attack2 Animation");
+           // Debug.Log("Attack2 Animation");
         }
 
         if (PlayerA.three)
         {
             charaManager.SetTrigger("Chain3");
             PlayerA.three = false;
-            Debug.Log("Attack3 Animation");
+           // Debug.Log("Attack3 Animation");
         }
 
         //Special Animation
@@ -88,7 +88,7 @@ public class CharaANIMEManager : MonoBehaviour
         {
             charaManager.SetTrigger("Special");
             PlayerA.bub = false;
-            Debug.Log("Special Animation");
+          //  Debug.Log("Special Animation");
         }
 
     }
