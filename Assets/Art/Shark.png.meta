@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 5f67d474b27a5f04d983d5993a67a5e6
+guid: 78d4b2f1bbd11d44396eed395c72dc07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 918859769838199049
-    second: eel_0
+      213: 5746764926269108267
+    second: Shark_0
   - first:
-      213: 5897821563474178108
-    second: eel_1
+      213: 303420649233120723
+    second: Shark_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eel_0
+      name: Shark_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 66
-        width: 385
-        height: 149
+        x: 0
+        y: 86
+        width: 492
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9016a93a71270cc00800000000000000
-      internalID: 918859769838199049
+      spriteID: b20b1f5b04c90cf40800000000000000
+      internalID: 5746764926269108267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eel_1
+      name: Shark_1
       rect:
         serializedVersion: 2
-        x: 406
-        y: 94
-        width: 385
-        height: 144
+        x: 550
+        y: 83
+        width: 547
+        height: 276
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c307487c67549d150800000000000000
-      internalID: 5897821563474178108
+      spriteID: 3ddfe0f0977f53400800000000000000
+      internalID: 303420649233120723
       vertices: []
       indices: 
       edges: []
@@ -159,9 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      eel_0: 918859769838199049
-      eel_1: 5897821563474178108
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
