@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,11 +9,13 @@ public class enemyAttack : MonoBehaviour
     private int attackPower;
     public enemySpawn spawner;
     public List<GameObject> Audios;
+    private SpriteRenderer spriteRenderer;
     private int num;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         WhichEnemy();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
@@ -29,14 +32,23 @@ public class enemyAttack : MonoBehaviour
     // when the enemy takes damage
     void Hit(int damage)
     {
+        hp -= damage;
+        StartCoroutine(TurnRed());
         if (hp <= 0)
         {
             spawner.RemoveSpawn();
             ChooseAudio();
             Destroy(gameObject);
         }
-        hp = (hp - damage);
     }
+
+    IEnumerator TurnRed()
+        {;
+            spriteRenderer.color = new Color(1, 0.4f, 0.4f);
+            yield return new WaitForSeconds(0.5f);
+            spriteRenderer.color = Color.white;
+        }
+    
     // sees which enemy current hp and attack is
     void WhichEnemy()
     {
