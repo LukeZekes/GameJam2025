@@ -11,6 +11,7 @@ public class enemySpawn : MonoBehaviour
     private int num;
     float timerFish, timerShark, timerEel;
     [SerializeField] float fishSpawnTime, sharkSpawnTime, eelSpawnTime;
+    [SerializeField] bool fishCanSpawn, sharkCanSpawn, eelCanSpawn;
     [SerializeField] int maxSpawns;
     int numSpawns;
     // Update is called once per frame
@@ -50,21 +51,21 @@ public class enemySpawn : MonoBehaviour
         switch (num)
         {
             case 0:
-                if(timerFish >= fishSpawnTime)
+                if(timerFish >= fishSpawnTime && fishCanSpawn)
                 {
                     spawnFish();
                     timerFish = 0;
                 }
                 break;
             case 1:
-                if (timerShark >= sharkSpawnTime)
+                if (timerShark >= sharkSpawnTime && sharkCanSpawn)
                 {
                     spawnShark();
                     timerShark = 0;
                 }
                 break;
             case 2:
-                if (timerEel >= eelSpawnTime)
+                if (timerEel >= eelSpawnTime && eelCanSpawn)
                 {
                     spawnEel();
                     timerEel = 0;

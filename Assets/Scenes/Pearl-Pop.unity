@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 163319588}
   - component: {fileID: 163319587}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: PlayerCinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 163319586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -47.7, z: -10}
+  m_LocalPosition: {x: 14, y: -47.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 519113728}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -46.84918, z: -10}
+  m_LocalPosition: {x: 14, y: -46.84918, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -499,7 +499,7 @@ Transform:
   m_GameObject: {fileID: 779751025}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 113.2, y: 0, z: -9}
+  m_LocalPosition: {x: 163.6, y: 0, z: -9}
   m_LocalScale: {x: 42.666668, y: 24, z: 16.666668}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -953,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 1452629486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.2, y: 0, z: -10}
+  m_LocalPosition: {x: 163.6, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -970,6 +970,14 @@ PrefabInstance:
     - target: {fileID: 5106270715433546982, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
       propertyPath: m_Name
       value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389787025415364730, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389787025415364730, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -66
       objectReference: {fileID: 0}
     - target: {fileID: 6354455733499673212, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1010,6 +1018,18 @@ PrefabInstance:
     - target: {fileID: 6354455733499673212, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026947871593543849, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863753524893749461, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863753524893749461, guid: d00cced09e5ba5544b882895e527de6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1080,7 +1100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3167333310450040860, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3167333310450040860, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1117,6 +1137,10 @@ PrefabInstance:
     - target: {fileID: 3167333310450040860, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630497718380792284, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5954155623869890562, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_Name
@@ -1164,11 +1188,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1452629490}
+  - {fileID: 779751029}
   - {fileID: 1485061204}
   - {fileID: 1627468054}
   - {fileID: 163319590}
   - {fileID: 519113733}
   - {fileID: 1574728141}
   - {fileID: 1058210086}
-  - {fileID: 779751029}
   - {fileID: 1086610847}
