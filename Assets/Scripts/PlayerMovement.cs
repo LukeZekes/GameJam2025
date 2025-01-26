@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float DashCoolown = 2.2f;
     bool dashed = false;
-    bool dashing = false;
+    public bool dashing = false;
     Vector2 dashTarget;
     float dashDistance;
     float dashAngle;

@@ -14,6 +14,16 @@ public class CharaANIMEManager : MonoBehaviour
         charaManager = GetComponent<Animator>();
     }
 
+    void FixedUpdate()
+    {
+        charaManager.ResetTrigger("isDash");
+        charaManager.ResetTrigger("isJump");
+        charaManager.ResetTrigger("Chain1");
+        charaManager.ResetTrigger("Chain2");
+        charaManager.ResetTrigger("Chain3");
+        charaManager.ResetTrigger("Special");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +35,7 @@ public class CharaANIMEManager : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
             Debug.Log("Move Animation");
         }
-        if (moveValue.x > 0)
+        else if (moveValue.x > 0)
         {
             charaManager.SetBool("isMove", true);
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -37,10 +47,10 @@ public class CharaANIMEManager : MonoBehaviour
         }
 
        //Dashing Animation
-       if (PlayerM.dashAction.IsPressed())
+       if (PlayerM.dashing)
        {
            charaManager.SetTrigger("isDash");
-           charaManager.ResetTrigger("isDash");
+
 
             Debug.Log("Dash Animation");
        }
@@ -49,7 +59,6 @@ public class CharaANIMEManager : MonoBehaviour
        if (PlayerM.jumpAction.IsPressed())
        {
            charaManager.SetTrigger("isJump");
-           charaManager.ResetTrigger("isJump");
             Debug.Log("Jump Animation");
         }
 
@@ -57,21 +66,18 @@ public class CharaANIMEManager : MonoBehaviour
        if (PlayerA.one)
         {
             charaManager.SetTrigger("Chain1");
-            charaManager.ResetTrigger("Chain1");
             Debug.Log("Attack1 Animation");
         }
 
         if (PlayerA.two)
         {
             charaManager.SetTrigger("Chain2");
-            charaManager.ResetTrigger("Chain2");
             Debug.Log("Attack2 Animation");
         }
 
         if (PlayerA.three)
         {
             charaManager.SetTrigger("Chain3");
-            charaManager.ResetTrigger("Chain3");
             Debug.Log("Attack3 Animation");
         }
 
@@ -79,7 +85,6 @@ public class CharaANIMEManager : MonoBehaviour
         if (PlayerA.bub)
         {
             charaManager.SetTrigger("Special");
-            charaManager.ResetTrigger("Special");
             Debug.Log("Special Animation");
         }
 
