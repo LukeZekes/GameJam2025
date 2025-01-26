@@ -25,7 +25,8 @@ public class enemySpawn : MonoBehaviour
         timerFish += Time.deltaTime;
         timerShark += Time.deltaTime;
         timerEel += Time.deltaTime;
-        num = Random.Range(0, 2);
+        float i = Random.Range(0, 2.9f);
+        num = (int)i;
         if (numSpawns < maxSpawns) whoToSpawn();
     }
     private void spawnFish()
