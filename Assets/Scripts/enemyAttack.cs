@@ -5,6 +5,7 @@ public class enemyAttack : MonoBehaviour
 {
     private int hp;
     private int attackPower;
+    public enemySpawn spawner;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +24,7 @@ public class enemyAttack : MonoBehaviour
     {
         if (hp <= 0)
         {
+            spawner.RemoveSpawn();
             Destroy(gameObject);
         }
         hp = (hp - damage);
