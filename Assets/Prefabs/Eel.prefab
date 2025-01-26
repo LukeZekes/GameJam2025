@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 440451412592403139}
   - component: {fileID: 897093179179230653}
   - component: {fileID: 7278889381172889888}
+  - component: {fileID: 2476477151132141097}
   m_Layer: 0
   m_Name: Eel
   m_TagString: Eel
@@ -193,3 +194,25 @@ MonoBehaviour:
   - {fileID: 8308451269294451036, guid: a82151503dacc1844be744b922c8d6fc, type: 3}
   - {fileID: 6425199525633107744, guid: 901376c4bcc02114697e0ef7b8e8e388, type: 3}
   - {fileID: 1142204765047186662, guid: 04884ffbe91fae74e94e06f840988285, type: 3}
+--- !u!95 &2476477151132141097
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3709437676193577799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80d3e328c6498f048ad43c2f5b7f4eb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

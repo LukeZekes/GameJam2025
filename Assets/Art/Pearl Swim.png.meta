@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pearl Swim_0: 6828660760098477679
+      Pearl Swim_1: 4508589003471700743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
