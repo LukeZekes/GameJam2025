@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     int dashBubbles;
     bool dashDampen;
 
+    float endLevelHeight;
     //Inputs
     InputAction moveAction;
     InputAction jumpAction;
@@ -48,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         bm = BubbleManager.Instance;
         GameObject temp = GameObject.Find("DashBubblePoint");
         DashBubblePoint = temp.transform;
+
+        endLevelHeight = GameObject.Find("EndLevelPoint").transform.position.y;
     }
 
     // Update is called once per frame
@@ -112,6 +115,10 @@ public class PlayerMovement : MonoBehaviour
             backBubbleTarget *= 3;
             backBubbleTarget += transform.position;
             bm.SpawnBubble(backBubbleTarget, 2, 2);
+        }
+
+        if (transform.position.y >= endLevelHeight) {
+            GameManager.WinGame();
         }
     }
 
