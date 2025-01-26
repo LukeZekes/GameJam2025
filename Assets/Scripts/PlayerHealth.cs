@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        Debug.Log("hit");
         if (health <= 0)
         {
             //Game Over

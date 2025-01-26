@@ -8,61 +8,71 @@ public class enemySpawn : MonoBehaviour
     public GameObject fishPrefab;
     public GameObject sharkPrefab;
     public GameObject eelPrefab;
-    float respawntime;
-    public GameObject spawn;
     private int num;
-    float timerF;
-    float timerS;
-    float timerE;
+    float timerFish, timerShark, timerEel;
+    [SerializeField] float fishSpawnTime, sharkSpawnTime, eelSpawnTime;
+    [SerializeField] int maxSpawns;
+    int numSpawns;
     // Update is called once per frame
+
+    void Start()
+    {
+        numSpawns = 0;
+    }
     void Update()
     {
-        timerF += Time.deltaTime;
-        timerS += Time.deltaTime;
-        timerE += Time.deltaTime;
+        timerFish += Time.deltaTime;
+        timerShark += Time.deltaTime;
+        timerEel += Time.deltaTime;
         num = Random.Range(0, 2);
-        whoToSpawn();
+        if (numSpawns < maxSpawns) whoToSpawn();
     }
     private void spawnFish()
     {
-        fishPrefab.transform.position = spawn.transform.position;
-        GameObject fish = Instantiate(fishPrefab) as GameObject;
+        numSpawns++;
+        enemyAttack fish = Instantiate(fishPrefab, transform.position, Quaternion.identity).GetComponent<enemyAttack>();
+        fish.spawner = this;
     }
     private void spawnEel() 
     {
-        eelPrefab.transform.position = spawn.transform.position;
-        GameObject eel = Instantiate(eelPrefab) as GameObject;
+        numSpawns++;
+        enemyAttack eel = Instantiate(eelPrefab, transform.position, Quaternion.identity).GetComponent<enemyAttack>();
+        eel.spawner = this;
     }
     private void spawnShark()
     {
-        sharkPrefab.transform.position = spawn.transform.position;
-        GameObject shark = Instantiate(sharkPrefab) as GameObject;
+        numSpawns++;
+        enemyAttack shark = Instantiate(sharkPrefab, transform.position, Quaternion.identity).GetComponent<enemyAttack>();
+        shark.spawner = this;
     }
     void whoToSpawn()
     {
         switch (num)
         {
             case 0:
-                if(timerF >= 10)
+                if(timerFish >= fishSpawnTime)
                 {
                     spawnFish();
-                    timerF = 0;
+                    timerFish = 0;
                 }
                 break;
             case 1:
-                if (timerS >= 13)
+                if (timerShark >= sharkSpawnTime)
                 {
                     spawnShark();
-                    timerS = 0;
+                    timerShark = 0;
                 }
                 break;
             case 2:
-                if (timerE >= 15)
+                if (timerEel >= eelSpawnTime)
                 {
                     spawnEel();
-                    timerE = 0;
+                    timerEel = 0;
                 }
                 break;
         }
+    }
+    public void RemoveSpawn() {
+        numSpawns = Mathf.Max(0, numSpawns - 1); // This shouldn't ever go  below 0 but just to be safe
     }
 }
