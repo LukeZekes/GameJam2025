@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SHLAM white_0: -8078570875889559998
+      SHLAM white_1: -579014928077332053
+      SHLAM white_2: 2989767619432942206
+      SHLAM white_3: -1260538747111351139
+      SHLAM white_4: 1865062778405167712
+      SHLAM white_5: -7745871335702772031
+      SHLAM white_6: 8076450948735634657
+      SHLAM white_7: -9118934071506484733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
