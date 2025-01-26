@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class enemyAttack : MonoBehaviour
     private int hp;
     private int attackPower;
     public enemySpawn spawner;
+    public List<GameObject> Audios;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

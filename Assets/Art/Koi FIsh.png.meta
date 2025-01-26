@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Koi FIsh_0: 2457819813018789382
+      Koi FIsh_1: 8112902389618795822
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
