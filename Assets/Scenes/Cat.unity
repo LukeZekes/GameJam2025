@@ -1632,6 +1632,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6646260607135022300, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8819418013392509918, guid: 0f53a9c7dde276043a056199b503123d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1860,19 +1864,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4050367441250430815, guid: fe740b7a304d0c9488dd8718ab625897, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5754115729105850273, guid: fe740b7a304d0c9488dd8718ab625897, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 3925868543
+      value: 3439329279
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4050367441250430815, guid: fe740b7a304d0c9488dd8718ab625897, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe740b7a304d0c9488dd8718ab625897, type: 3}
 --- !u!1001 &8250502275325890891
 PrefabInstance:
@@ -1950,6 +1951,6 @@ SceneRoots:
   - {fileID: 2109038277}
   - {fileID: 1403736604}
   - {fileID: 1780235491}
+  - {fileID: 7075968420327876583}
   - {fileID: 2134721043}
   - {fileID: 2030406673}
-  - {fileID: 7075968420327876583}
