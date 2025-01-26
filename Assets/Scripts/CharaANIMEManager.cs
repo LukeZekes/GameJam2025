@@ -33,6 +33,8 @@ public class CharaANIMEManager : MonoBehaviour
         Vector2 moveValue = PlayerM.moveAction.ReadValue<Vector2>();
         charaManager.SetFloat("X", moveValue.x);
         charaManager.SetFloat("Y", moveValue.y);
+        charaManager.SetFloat("AbsX", Mathf.Abs(moveValue.x));
+        charaManager.SetFloat("AbsY", Mathf.Abs(moveValue.y));
         if (moveValue.x < 0)
         {
             charaManager.SetBool("isMove", true);

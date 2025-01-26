@@ -444,6 +444,7 @@ MonoBehaviour:
   player: {fileID: 5954155623869890562}
   weapon: {fileID: 0}
   txtDisplay: 5
+  bubbles: {fileID: 0}
 --- !u!1 &6269961643344980636
 GameObject:
   m_ObjectHideFlags: 0
