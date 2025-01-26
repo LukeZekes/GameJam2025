@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     private float leftBoundary, rightBoundary, leftTeleportPoint, rightTeleportPoint;
-    [SerializeField] private GameObject stage, leftCapturePlane, rightCapturePlane;
+    // [SerializeField] private GameObject stage;
+    [SerializeField] private RenderTexture stageRenderTexture;
+    private Camera stageCaptureCamera;
     void Start()
     {
         leftBoundary = GameObject.Find("LeftBoundaryPoint").transform.position.x;
@@ -23,11 +25,6 @@ public class PlayerCamera : MonoBehaviour
         // Apply to camera
         // stageCaptureCamera.rect = new Rect(0, 0, 1, 1);
         // stageCaptureCamera.orthographicSize = stageBounds.size.y;
-
-        // Setup the player camera - follows the player and captures everything except the UI
-        int resWidth = Screen.width;
-        int resHeight = Screen.height;
-
     }
 
     void Update()
